@@ -1,0 +1,332 @@
+@use 'fonts.scss';
+@use 'animations.scss';
+
+$dark-gray-text: rgb(54, 54, 54);
+$light-grey: #ccc;
+$medium-grey: #999;
+$dark-grey: #666;
+$very-dark-grey: #333;
+$black: #000;
+$tesla-red: #cc0000;
+$tesla-blue: rgb(70, 108, 217);
+$white: #fff;
+
+:root {
+	--navbar-sliding-left: 0%;
+}
+
+@mixin btn {
+	padding: 2% 4%;
+	border-radius: 2rem;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#home {
+	margin-top: 6.8rem;
+	text-align: center;
+}
+
+body {
+	font-family: 'ProximaNova', sans-serif;
+}
+
+h2,
+h4 {
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 2.8rem;
+}
+
+h3 {
+	font-size: 2.2rem;
+}
+
+h4 {
+	font-size: 1.8rem;
+}
+
+#container {
+	height: 100vh;
+	width: 100vw;
+	background: {
+		image: url(https://tesla-cdn.thron.com/delivery/public/image/tesla/32e5e0f3-5c04-42ef-8f8f-c6b1c26f8a9e/bvlatuR/std/2880x1800/ms-main-hero-desktop);
+		size: cover;
+		position: center center;
+	}
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+$hover-color: rgba(0, 0, 0, 0.062);
+
+header {
+	h1 {
+		width: 200px;
+		display: flex;
+		align-items: center;
+	}
+	display: grid;
+	grid-template-columns: 200px max-content min-content;
+	justify-content: space-between;
+	width: 95%;
+	margin: 0 auto;
+	padding-top: 0.8rem;
+
+	nav {
+		position: relative;
+		#hover-sliding {
+			opacity: 0;
+			position: absolute;
+			left: var(--navbar-sliding-left);
+			top: 0;
+			height: 100%;
+			width: 25%;
+			background: $hover-color;
+			border-radius: 10px;
+			pointer-events: none;
+		}
+
+		& > ul {
+			display: flex;
+
+			&:hover ~ #hover-sliding {
+				opacity: 1;
+			}
+
+			li {
+				padding: 0.7rem;
+
+				&:hover {
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}
+
+#hamburger {
+	display: none;
+}
+
+$box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.27);
+
+#menu {
+	z-index: 1;
+	position: absolute;
+	right: 0;
+	top: 0;
+	background-color: $white;
+	height: 100vh;
+	width: 20rem;
+	padding: 1rem 2.2rem;
+	margin-top: 2rem;
+	box-shadow: $box-shadow;
+
+	$close-top-distance: 4%;
+
+	.close {
+		position: absolute;
+		right: 10%;
+		top: $close-top-distance;
+	}
+
+	ul {
+		margin-top: calc(2rem + ($close-top-distance * 2));
+		li {
+			padding: 1.2rem;
+			border-radius: 10px;
+			&:hover {
+				background-color: $hover-color;
+			}
+
+			a {
+				font-size: 1rem;
+				color: $very-dark-grey;
+			}
+		}
+	}
+}
+
+.menu-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.27);
+	display: none;
+}
+
+.active {
+	display: inline-block;
+}
+
+@media screen and (max-width: 50em) {
+	nav {
+		display: none;
+	}
+
+	#hamburger {
+		display: inline-block;
+	}
+}
+
+form {
+	background-color: lighten($light-grey, 17%);
+	fieldset {
+	}
+}
+
+// login
+
+#login {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.btn-primary {
+	background-color: $tesla-blue;
+	color: $white;
+	border: none;
+
+	&:hover {
+		background-color: darken($tesla-blue, 10);
+	}
+}
+
+.btn-secondary {
+	color: $black;
+	border: 3px solid $black;
+	background-color: $white;
+
+	&:hover {
+		background-color: $black;
+		color: $white;
+	}
+}
+
+// cars
+
+#cars {
+	background-color: rgb(244, 244, 244);
+	padding: 2.2rem;
+
+	.car-inventory {
+		display: grid;
+		grid-template-rows: repeat(max-content, 1fr);
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1.2rem;
+		padding: 1.2rem;
+		.car {
+			background-color: $white;
+			border-radius: 10px;
+			padding: 2.2rem;
+			display: grid;
+			grid-template-areas:
+				'model model . price'
+				'version version . .'
+				'img img img img'
+				'specs specs specs specs';
+
+			h3 {
+				font-size: 1.8rem;
+				font-weight: bold;
+				color: $very-dark-grey;
+				grid-area: model;
+			}
+
+			h5 {
+				font-size: 1.4rem;
+				grid-area: price;
+				font-weight: bold;
+				justify-self: flex-end;
+			}
+
+			& > h4 {
+				grid-area: version;
+				font-size: 1.2rem;
+				font-weight: normal;
+			}
+
+			p {
+				font-size: 1rem;
+				font-weight: normal;
+				color: $very-dark-grey;
+			}
+
+			img {
+				grid-area: img;
+				max-width: 100%;
+			}
+			.car-specs {
+				grid-area: specs;
+				text-align: center;
+				display: flex;
+				justify-content: space-around;
+
+				.vertial-line {
+					width: 1px;
+					height: 100%;
+					background-color: $medium-grey;
+				}
+
+				.car-cta {
+					width: 100%;
+					gap: 4%;
+					display: none;
+					opacity: 0;
+
+					button {
+						@include btn;
+						width: 100%;
+					}
+				}
+
+				li {
+					h5 {
+						font-weight: normal;
+						span {
+							font-size: 0.8rem;
+							color: $very-dark-grey;
+						}
+					}
+				}
+			}
+
+			&:hover {
+				.car-cta {
+					display: flex;
+					animation-name: slideIn;
+					animation-duration: 0.4s;
+					opacity: 1;
+				}
+
+				ul > li {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 50em) {
+	#cars {
+		.car-inventory {
+			grid-template-columns: 1fr;
+		}
+	}
+}
