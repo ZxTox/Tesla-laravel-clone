@@ -9,4 +9,8 @@ class ViewController extends Controller
     function showIndex() {
         return view('index');
     }
+
+    function showCars() {
+        return view('cars');
+    }
 }

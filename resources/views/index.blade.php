@@ -5,7 +5,7 @@
 @endsection
 
 @section("content")
-<div id="container">
+<div id="app">
     <div class="menu-overlay">
         <section id="menu">
             <a class="close" href="#">
@@ -66,6 +66,6 @@
     </main>
 </div>
 
-<script src="assets/js/main.js"></script>
+<script src="{{ asset('/assets/js/main.js') }}"></script>
 
 @endsection
