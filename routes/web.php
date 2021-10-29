@@ -18,6 +18,8 @@ use App\Http\Controllers\ViewController;
 Route::get('/', [ViewController::class, "showIndex"])->name("index");
 Route::get('/cars', [ViewController::class, "showCars"]);
 
+Route::get('/testlogin', [ViewController::class, "showLogin"]); 
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');

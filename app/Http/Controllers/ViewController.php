@@ -13,4 +13,8 @@ class ViewController extends Controller
     function showCars() {
         return view('cars');
     }
+
+    function showLogin() {
+        return view('login');
+    }
 }
