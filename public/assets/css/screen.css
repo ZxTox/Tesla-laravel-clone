@@ -307,6 +307,10 @@ header nav > ul li:hover {
   font-family: "GothamMedium";
   margin-bottom: 8%;
 }
+#login p {
+  margin-bottom: 10%;
+  color: #cc0000;
+}
 #login span {
   color: #999;
   display: block;
@@ -355,7 +359,6 @@ form input {
   width: 100%;
   border-radius: 10rem;
   line-height: 2;
-  padding-left: 7%;
 }
 form input[type=submit] {
   text-transform: uppercase;
@@ -366,10 +369,14 @@ form input:not(input[type=submit]) {
   outline: unset;
   font-size: 1.4rem;
   color: #333;
+  padding-left: 7%;
 }
 form input:not(input[type=submit]):not(input[type=text]) {
   letter-spacing: 4px;
   position: relative;
+}
+form input:not(input[type=submit]):hover {
+  outline: 0.02rem solid #999;
 }
 form fieldset {
   padding: 4rem;
