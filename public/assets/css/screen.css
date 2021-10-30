@@ -85,6 +85,10 @@ h4 {
   background-position: center center;
 }
 
+.hidden {
+  display: none;
+}
+
 #container {
   width: 95%;
   margin: 0 auto;
@@ -282,6 +286,7 @@ header nav > ul li:hover {
   border-radius: 2rem;
   text-decoration: none;
   text-transform: uppercase;
+  cursor: pointer;
   width: 100%;
 }
 #cars .car-inventory .car .car-specs li h5 {
@@ -344,6 +349,7 @@ header nav > ul li:hover {
   border-radius: 2rem;
   text-decoration: none;
   text-transform: uppercase;
+  cursor: pointer;
   width: 100%;
   height: 3rem;
 }
@@ -366,6 +372,7 @@ form input {
 form input[type=submit] {
   text-transform: uppercase;
   height: 3rem;
+  cursor: pointer;
 }
 form input:not(input[type=submit]) {
   border: unset;
