@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Car;
+use App\Models\Carmodel;
 
 class CarController extends Controller
 {
@@ -15,4 +16,11 @@ class CarController extends Controller
         ->get();
         return response()->json($cars, 200);
     } 
+
+    function showCar(Request $request, $car) {
+        $view_controller = new ViewController;
+        $car = Carmodel::find($car);
+        
+        return $view_controller->showCar($car);
+    }
 }

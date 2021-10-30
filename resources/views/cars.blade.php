@@ -5,6 +5,11 @@
 @endsection
 
 @section("content")
+
+
+@extends("layouts.header")
+
+
 <div id="container">
     <aside>
         <h2>Inventory</h2>

@@ -16,7 +16,12 @@ use App\Http\Controllers\ViewController;
 */
 
 Route::get('/', [ViewController::class, "showIndex"])->name("index");
-Route::get('/cars', [ViewController::class, "showCars"]);
+
+Route::group(["prefix" => "cars"], function() {
+    Route::get('/', [ViewController::class, "showCars"]);
+    Route::get('/{id}', [CarController::class, "showCar"]);
+});
+
 
 Route::get('/auth', [ViewController::class, "showAuth"])->name("auth"); 
 
