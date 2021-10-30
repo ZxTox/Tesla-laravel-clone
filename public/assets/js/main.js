@@ -22,12 +22,15 @@ function init() {
 
 	function closePopUp(e) {
 		e.preventDefault();
-		document.querySelector(MENU_SELECTOR).classList.add('slideOut');
-
-		setTimeout(() => {
-			document.querySelector(MENU_OVERLAY_SELECTOR).classList.remove('active');
-			document.querySelector(MENU_SELECTOR).classList.remove('slideOut');
-		}, 247);
+		const { target: $clickedElement } = e;
+		if ($clickedElement === document.querySelector(MENU_OVERLAY_SELECTOR) || $clickedElement === document.querySelector(CLOSE_MENU_SELECTOR)) {
+			document.querySelector(MENU_SELECTOR).classList.add('slideOut');
+			setTimeout(() => {
+				document.querySelector(MENU_OVERLAY_SELECTOR).classList.remove('active');
+				document.querySelector(MENU_SELECTOR).classList.remove('slideOut');
+			}, 247);
+		}
+		
 	}
 
 	function handlePopUp(e) {

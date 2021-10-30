@@ -156,6 +156,9 @@ header nav > ul li:hover {
   right: 10%;
   top: 4%;
 }
+#menu .close i {
+  pointer-events: none;
+}
 #menu ul {
   margin-top: calc(2rem + 8%);
 }
