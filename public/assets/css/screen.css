@@ -103,6 +103,10 @@ h4 {
   font-size: 1.8rem;
 }
 
+img {
+  max-width: 100%;
+}
+
 #app {
   height: 100vh;
   width: 100vw;
@@ -288,7 +292,6 @@ header nav > ul li:hover {
 }
 #cars .car-inventory .car img {
   grid-area: img;
-  max-width: 100%;
 }
 #cars .car-inventory .car .car-specs {
   grid-area: specs;
@@ -416,6 +419,83 @@ form input:not(input[type=submit]):hover {
 }
 form fieldset {
   padding: 4rem;
+}
+
+#car {
+  display: grid;
+  grid-template-areas: "hd hd hd hd info info" "car car car car info info" "car car car car info info";
+  width: 100%;
+  height: 100%;
+}
+#car header {
+  grid-area: hd;
+}
+#car #car-media {
+  grid-area: car;
+}
+#car #car-media .car-images {
+  position: relative;
+}
+#car #car-media .car-images:hover .img-arrows {
+  display: block !important;
+}
+#car #car-media .car-images a svg {
+  pointer-events: none;
+}
+#car #car-media .car-images a:nth-of-type(1) {
+  position: absolute;
+  right: 5%;
+  bottom: 50%;
+}
+#car #car-media .car-images a:nth-of-type(2) {
+  position: absolute;
+  left: 5%;
+  bottom: 50%;
+}
+#car #car-information {
+  grid-area: info;
+  text-align: center;
+  background-color: #fff;
+  margin-top: 10%;
+  padding: 0 5rem;
+}
+#car #car-information h3, #car #car-information h4 {
+  margin-bottom: 4%;
+}
+#car #car-information h3 {
+  font-weight: bold;
+}
+#car #car-information h4 {
+  font-size: 1rem;
+  color: #333;
+}
+#car #car-information > ul {
+  margin-bottom: 20%;
+}
+#car #car-information > ul li {
+  margin-bottom: 7%;
+}
+#car #car-information #car-features {
+  text-align: left;
+  list-style-type: initial;
+  color: #666;
+  margin-top: 7%;
+}
+#car #car-information .car-specs {
+  display: flex;
+  justify-content: space-between;
+}
+#car #car-information .car-specs h5 {
+  font-size: 1.4rem;
+}
+#car #car-information .car-specs h5 span {
+  font-size: 1rem;
+  margin-left: 1%;
+}
+#car #car-information .car-specs p {
+  font-size: 0.8rem;
+  color: #666;
+  margin: 10% 0;
 }
 
 @media screen and (max-width: 50em) {
