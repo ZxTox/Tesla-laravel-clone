@@ -18,7 +18,7 @@ use App\Http\Controllers\ViewController;
 Route::get('/', [ViewController::class, "showIndex"])->name("index");
 Route::get('/cars', [ViewController::class, "showCars"]);
 
-Route::get('/testlogin', [ViewController::class, "showLogin"]); 
+Route::get('/auth', [ViewController::class, "showAuth"]); 
 
 Route::get('/dashboard', function () {
     return view('dashboard');

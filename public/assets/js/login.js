@@ -8,10 +8,20 @@ function init() {
 
     function showRegister(e) {
         e.preventDefault();
-        document.querySelector("#register-form").classList.toggle("hidden");
-        document.querySelector("#login-form").classList.toggle("hidden");
-        document.querySelectorAll("button").forEach(button => button.classList.toggle("hidden"));
-        document.querySelectorAll("h3").forEach(heading => heading.classList.toggle("hidden"));
+
+        document.querySelector("#register-form").classList.add("dropDown");
+        document.querySelector("#login-form").classList.add("dropUp");
+
+
+        setTimeout(() => {
+            document.querySelector("#register-form").classList.toggle("hidden");
+            document.querySelector("#login-form").classList.toggle("hidden");
+            document.querySelectorAll("button").forEach(button => button.classList.toggle("hidden"));
+            document.querySelectorAll("h3").forEach(heading => heading.classList.toggle("hidden"));
+        }, 447);
+
+
+        
     }
 }
 

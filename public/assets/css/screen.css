@@ -20,6 +20,16 @@
   animation-duration: 0.3s;
 }
 
+.dropDown {
+  animation-name: dropDown;
+  animation-duration: 0.5s;
+}
+
+.dropUp {
+  animation-name: dropUp;
+  animation-duration: 0.5s;
+}
+
 @keyframes slideIn {
   0% {
     transform: translateX(200px);
@@ -38,6 +48,22 @@
   100% {
     transform: translateX(300px);
     opacity: 0;
+  }
+}
+@keyframes dropDown {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes dropUp {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 :root {
