@@ -17,7 +17,16 @@
                 <li><a href="#">Model 3</a></li>
                 <li><a href="#">Model X</a></li>
                 <li><a href="#">Model Y</a></li>
-                <li><a href="#">Account Settings</a></li>
+
+
+                @auth
+                    <li><a href="{{ route("dashboard") }}">Account Settings</a></li>
+                @endauth
+
+                @guest
+                    <li><a href="{{ route("auth") }}">Authenticate</a></li>
+                @endguest
+                
                 <li><a href="#">Shop Cars</a></li>
                 <li><a href="#">About Us</a></li>
             </ul>
@@ -52,7 +61,7 @@
         <nav>
             <ul>
                 <li><a href="#">Shop</a></li>
-                <li><a href="#">Account</a></li>
+                <li><a href="{{ route("auth") }}">Auth</a></li>
                 <li class="menu-btn__popup"><a href="#">Menu</a></li>
             </ul>
         </nav>

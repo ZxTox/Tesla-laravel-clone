@@ -21,16 +21,15 @@ function init() {
 		.forEach((navItem) => navItem.addEventListener('mouseover', handleSliding));
 
 	function closePopUp(e) {
-		e.preventDefault();
 		const { target: $clickedElement } = e;
 		if ($clickedElement === document.querySelector(MENU_OVERLAY_SELECTOR) || $clickedElement === document.querySelector(CLOSE_MENU_SELECTOR)) {
+			e.preventDefault();
 			document.querySelector(MENU_SELECTOR).classList.add('slideOut');
 			setTimeout(() => {
 				document.querySelector(MENU_OVERLAY_SELECTOR).classList.remove('active');
 				document.querySelector(MENU_SELECTOR).classList.remove('slideOut');
 			}, 247);
 		}
-		
 	}
 
 	function handlePopUp(e) {

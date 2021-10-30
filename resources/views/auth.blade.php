@@ -14,6 +14,8 @@
 @endauth
 
 <header>
+
+    <a href="{{ route("index") }}">
     <h1>
         <svg
             class="tds-icon tds-icon-logo-wordmark tds-site-logo-icon"
@@ -27,6 +29,7 @@
             ></path>
         </svg>
     </h1>
+</a>
 
     <a class="menu-btn__popup" id="hamburger" href="#">Menu</a>
 </header>
