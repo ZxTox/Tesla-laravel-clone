@@ -23,6 +23,14 @@ $white: #fff;
 	cursor: pointer;
 }
 
+@mixin profile-picture($size) {
+	border-radius: 100%;
+	width: $size;
+	height: $size;
+	object-fit: cover;
+	object-position: center top;
+}
+
 *,
 *::before,
 *::after {
@@ -513,6 +521,18 @@ form {
 		h4 {
 			font-size: 1rem;
 			color: $very-dark-grey;
+		}
+
+		figure {
+			margin-bottom: 10%;
+
+			img {
+				@include profile-picture(7rem);
+			}
+
+			figcaption {
+				font-size: 1.2rem;
+			}
 		}
 
 		&>ul {

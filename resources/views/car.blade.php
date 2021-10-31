@@ -59,6 +59,15 @@
             </li>
         </ul>
 
+        <figure>
+            <a href="#">
+                <img src="https://i.pinimg.com/736x/37/f8/3f/37f83f96dbc08d1b8e57f3cbac5918c1.jpg" alt="Elon Musk's profile picture">
+            </a>
+            <figcaption>
+              Elon Musk
+            </figcaption>
+          </figure>
+
         <ul>
             <li><p>Used Vehicule</p></li>
             <li><p>22,867 km odometer</p></li>

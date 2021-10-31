@@ -485,6 +485,19 @@ form fieldset {
   font-size: 1rem;
   color: #333;
 }
+#car #car-information figure {
+  margin-bottom: 10%;
+}
+#car #car-information figure img {
+  border-radius: 100%;
+  width: 7rem;
+  height: 7rem;
+  object-fit: cover;
+  object-position: center top;
+}
+#car #car-information figure figcaption {
+  font-size: 1.2rem;
+}
 #car #car-information > ul {
   margin-bottom: 20%;
 }
