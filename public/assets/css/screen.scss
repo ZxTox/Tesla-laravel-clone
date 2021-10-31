@@ -606,4 +606,43 @@ form {
 			grid-template-columns: 1fr;
 		}
 	}
+
+	#car {
+		grid-template-areas: 
+		"car car car car car car"
+		"car car car car car car"
+		"info info info info info info"
+		"info info info info info info";
+
+		#car-media {
+			.car-images {
+
+				&>.img-arrows {
+					opacity: 1;
+					transform: translateX(0) !important;
+
+					svg {
+						width: 2rem;
+						height: 2rem;
+					}
+				}
+
+				img {
+					min-width: 100%;
+					min-height: 100%;
+				}
+			}
+		}
+
+		#car-information {
+			padding: 0 5rem;
+			h3 {
+				margin-top: unset;
+			}
+
+			&>div {
+				display: none;
+			}
+		}
+	}
 }

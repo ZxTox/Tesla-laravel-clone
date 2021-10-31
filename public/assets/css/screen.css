@@ -563,6 +563,31 @@ form fieldset {
   #cars .car-inventory {
     grid-template-columns: 1fr;
   }
+
+  #car {
+    grid-template-areas: "car car car car car car" "car car car car car car" "info info info info info info" "info info info info info info";
+  }
+  #car #car-media .car-images > .img-arrows {
+    opacity: 1;
+    transform: translateX(0) !important;
+  }
+  #car #car-media .car-images > .img-arrows svg {
+    width: 2rem;
+    height: 2rem;
+  }
+  #car #car-media .car-images img {
+    min-width: 100%;
+    min-height: 100%;
+  }
+  #car #car-information {
+    padding: 0 5rem;
+  }
+  #car #car-information h3 {
+    margin-top: unset;
+  }
+  #car #car-information > div {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=screen.css.map */
