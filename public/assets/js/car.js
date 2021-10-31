@@ -26,7 +26,7 @@ function init() {
         }
         const $img = document.querySelector("img");
 
-        $img.src = images[currentIndex % 4];
+        $img.src = images[currentIndex % images.length];
     }
 
 }

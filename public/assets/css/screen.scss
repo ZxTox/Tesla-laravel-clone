@@ -432,12 +432,13 @@ form {
 #car {
 	display: grid;
 	grid-template-areas: 
-	"hd hd hd hd info info"
+	"car car car car info info"
 	"car car car car info info"
 	"car car car car info info"
 	"car car car car info info";
 	width: 100%;
 	height: 100%;
+	position: fixed;
 
 	header {
 		grid-area: hd;
@@ -445,8 +446,18 @@ form {
 
 	#car-media {
 		grid-area: car;
+		overflow: hidden;
 		.car-images {
 			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			img {
+				min-width: 100vw;
+				object-fit: cover;
+				min-height: 100vh;
+			}
 
 			&:hover {
 				.img-arrows {
@@ -489,6 +500,7 @@ form {
 		background-color: $white;
 		margin-top: 10%;
 		padding: 0 5rem;
+		overflow-y: scroll;
 
 		h3, h4 {
 			margin-bottom: 4%;

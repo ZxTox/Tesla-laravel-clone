@@ -8,10 +8,9 @@
 
 <div id="car">
 
-    @include("layouts.header")
-
-
     <section id="car-media">
+
+        @include("layouts.header")
 
         <div class="car-images">
             <a class="img-arrows invinsible" href="#" data-type="0">
@@ -71,6 +70,57 @@
         <h3>Key Features</h3>
 
         <ul id="car-features">
+            <li><p>Solid Black Paint</p></li>
+            <li><p>19" Silver Slipstream Wheels</p></li>
+            <li><p>Black Textile Interior</p></li>
+            <li><p>Full Self-Driving Capability</p></li>
+            <li><p>Smart Air Suspension</p></li>
+            <li><p>Sunroof</p></li>
+            <li><p>Keyless Entry</p></li>
+            <li><p>Power Liftgate</p></li>
+            <li><p>GPS Enabled Homelink</p></li>
+            <li><p>Dark Ash Wood Décor</p></li>
+            <li><p>Dark Headliner</p></li>
+
+
+            <li><p>Solid Black Paint</p></li>
+            <li><p>19" Silver Slipstream Wheels</p></li>
+            <li><p>Black Textile Interior</p></li>
+            <li><p>Full Self-Driving Capability</p></li>
+            <li><p>Smart Air Suspension</p></li>
+            <li><p>Sunroof</p></li>
+            <li><p>Keyless Entry</p></li>
+            <li><p>Power Liftgate</p></li>
+            <li><p>GPS Enabled Homelink</p></li>
+            <li><p>Dark Ash Wood Décor</p></li>
+            <li><p>Dark Headliner</p></li>
+
+            <li><p>Solid Black Paint</p></li>
+            <li><p>19" Silver Slipstream Wheels</p></li>
+            <li><p>Black Textile Interior</p></li>
+            <li><p>Full Self-Driving Capability</p></li>
+            <li><p>Smart Air Suspension</p></li>
+            <li><p>Sunroof</p></li>
+            <li><p>Keyless Entry</p></li>
+            <li><p>Power Liftgate</p></li>
+            <li><p>GPS Enabled Homelink</p></li>
+            <li><p>Dark Ash Wood Décor</p></li>
+            <li><p>Dark Headliner</p></li>
+
+
+            <li><p>Solid Black Paint</p></li>
+            <li><p>19" Silver Slipstream Wheels</p></li>
+            <li><p>Black Textile Interior</p></li>
+            <li><p>Full Self-Driving Capability</p></li>
+            <li><p>Smart Air Suspension</p></li>
+            <li><p>Sunroof</p></li>
+            <li><p>Keyless Entry</p></li>
+            <li><p>Power Liftgate</p></li>
+            <li><p>GPS Enabled Homelink</p></li>
+            <li><p>Dark Ash Wood Décor</p></li>
+            <li><p>Dark Headliner</p></li>
+
+
             <li><p>Solid Black Paint</p></li>
             <li><p>19" Silver Slipstream Wheels</p></li>
             <li><p>Black Textile Interior</p></li>
