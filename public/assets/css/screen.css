@@ -2,10 +2,10 @@
   font-family: ProximaNova;
   src: url("../fonts/ProximaNova.otf") format("opentype");
 }
-@font-face {
-  font-family: GothamMedium;
-  src: url("../fonts/Gotham Medium.otf") format("opentype");
-}
+/*@font-face {
+	font-family: GothamMedium;
+	src: url('../fonts/Gotham\ Medium.otf') format('opentype');
+} */
 @font-face {
   font-family: GothamRegular;
   src: url("../fonts/GothamLight Regular.otf") format("opentype");
@@ -499,7 +499,7 @@ form fieldset {
   font-size: 1.2rem;
 }
 #car #car-information > ul {
-  margin-bottom: 20%;
+  margin: 17% 0 10% 0;
 }
 #car #car-information > ul li {
   margin-bottom: 7%;
@@ -515,7 +515,8 @@ form fieldset {
   justify-content: space-between;
 }
 #car #car-information .car-specs h5 {
-  font-size: 1.4rem;
+  font-size: 1.7rem;
+  color: #333;
 }
 #car #car-information .car-specs h5 span {
   font-size: 1rem;
