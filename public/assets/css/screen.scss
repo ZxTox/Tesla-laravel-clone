@@ -74,6 +74,10 @@ img {
 	display: none;
 }
 
+.invinsible {
+	
+}
+
 #container {
 	width: 95%;
 	margin: 0 auto;
@@ -430,6 +434,7 @@ form {
 	grid-template-areas: 
 	"hd hd hd hd info info"
 	"car car car car info info"
+	"car car car car info info"
 	"car car car car info info";
 	width: 100%;
 	height: 100%;
@@ -445,7 +450,8 @@ form {
 
 			&:hover {
 				.img-arrows {
-					display: block !important;
+					opacity: 1;
+					transform: translateX(0);
 				}
 			}
 
@@ -455,17 +461,25 @@ form {
 				}
 			}
 
-			a:nth-of-type(1) {
+			a {
 				position: absolute;
-				right: 5%;
 				bottom: 50%;
+				opacity: 0;
+
+				transition: all .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+				&:nth-of-type(1) {
+					right: 5%;
+					transform: translateX(47px);
+				}
+				
+				&:nth-of-type(2) {
+					left: 5%;
+					transform: translateX(-47px);
+				}
 			}
+
 			
-			a:nth-of-type(2) {
-				position: absolute;
-				left: 5%;
-				bottom: 50%;
-			}
 		}
 	}
 

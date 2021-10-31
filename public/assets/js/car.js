@@ -28,4 +28,5 @@ function init() {
 
         $img.src = images[currentIndex % 4];
     }
+
 }

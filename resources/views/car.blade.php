@@ -14,7 +14,7 @@
     <section id="car-media">
 
         <div class="car-images">
-            <a class="img-arrows hidden" href="#" data-type="0">
+            <a class="img-arrows invinsible" href="#" data-type="0">
                 <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="24" cy="24" r="24" fill="#C4C4C4"/>
                     <path d="M19.8757 33.8992L29.7749 24L19.8757 14.1008L18.2249 15.7505L26.4756 24L18.2249 32.2495L19.8757 33.8992Z" fill="#404040"/>
@@ -22,7 +22,7 @@
             </a>
 
 
-            <a class="img-arrows hidden" href="#" data-type="1">
+            <a class="img-arrows invinsible" href="#" data-type="1">
                 <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="24" cy="24" r="24" transform="rotate(-180 24 24)" fill="#C4C4C4"/>
                     <path d="M28.1243 14.1008L18.2251 24L28.1243 33.8992L29.7751 32.2495L21.5244 24L29.7751 15.7505L28.1243 14.1008Z" fill="#404040"/>

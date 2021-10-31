@@ -423,7 +423,7 @@ form fieldset {
 
 #car {
   display: grid;
-  grid-template-areas: "hd hd hd hd info info" "car car car car info info" "car car car car info info";
+  grid-template-areas: "hd hd hd hd info info" "car car car car info info" "car car car car info info" "car car car car info info";
   width: 100%;
   height: 100%;
 }
@@ -437,20 +437,25 @@ form fieldset {
   position: relative;
 }
 #car #car-media .car-images:hover .img-arrows {
-  display: block !important;
+  opacity: 1;
+  transform: translateX(0);
 }
 #car #car-media .car-images a svg {
   pointer-events: none;
 }
-#car #car-media .car-images a:nth-of-type(1) {
+#car #car-media .car-images a {
   position: absolute;
-  right: 5%;
   bottom: 50%;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+#car #car-media .car-images a:nth-of-type(1) {
+  right: 5%;
+  transform: translateX(47px);
 }
 #car #car-media .car-images a:nth-of-type(2) {
-  position: absolute;
   left: 5%;
-  bottom: 50%;
+  transform: translateX(-47px);
 }
 #car #car-information {
   grid-area: info;
