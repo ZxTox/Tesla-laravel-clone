@@ -37,6 +37,16 @@
     </section>
 
     <section id="car-information">
+
+
+        <div>
+            <svg width="32" height="20" viewBox="0 0 32 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.444092 3.51918L15.9999 19.075L31.5558 3.51918L28.9634 0.925015L15.9999 13.8903L3.03642 0.925015L0.444092 3.51918Z" fill="#404040"/>
+            </svg>
+        </div>
+        
+            
+
         <h3>{{ $car -> year }} {{ $car -> name }}</h3>
         <h4>{{ explode(' ', $car -> name)[2] }} All-Wheel Drive</h4>
 

@@ -66,6 +66,17 @@
     transform: translateX(0);
   }
 }
+@keyframes bounce {
+  0% {
+    transform: translateY(2rem);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(2rem);
+  }
+}
 :root {
   --navbar-sliding-left: 0%;
 }
@@ -477,6 +488,18 @@ form fieldset {
   margin-top: 10%;
   padding: 0 5rem 5rem;
   overflow-y: scroll;
+  position: relative;
+}
+#car #car-information > div {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 7%;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.47) 0%, #fff 100%);
+}
+#car #car-information > div svg {
+  animation: bounce 2s infinite;
 }
 #car #car-information h3, #car #car-information h4 {
   margin-bottom: 4%;

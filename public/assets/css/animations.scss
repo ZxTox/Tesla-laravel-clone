@@ -63,3 +63,18 @@ $animation-duration: 0.3s;
 		transform: translateX(0);
 	}
 }
+
+@keyframes bounce {
+
+	0% {
+		transform: translateY(2rem);
+	}
+
+	50% {
+		transform: translateY(0);
+	}
+
+	100% {
+		transform: translateY(2rem);
+	}
+}

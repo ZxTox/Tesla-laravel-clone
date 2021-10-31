@@ -10,6 +10,17 @@ images.push("https://static-assets.tesla.com/configurator/compositor?context=des
 
 function init() {
     document.querySelectorAll(".img-arrows").forEach(arrow => arrow.addEventListener("click", changeImg));
+    document.querySelector("#car-information").addEventListener("scroll", removeScrollArrow);
+
+
+    function removeScrollArrow(e) {
+        e.preventDefault();
+        const $el = document.querySelector("#car-information");
+        document.querySelector("#car-information>div").style.opacity = 0;
+        if($el.scrollTop <= 10) {
+            document.querySelector("#car-information>div").style.opacity = 1;
+        }
+    }
 
     function changeImg(e) {
         e.preventDefault();
