@@ -2,10 +2,10 @@
   font-family: ProximaNova;
   src: url("../fonts/ProximaNova.otf") format("opentype");
 }
-/*@font-face {
-	font-family: GothamMedium;
-	src: url('../fonts/Gotham\ Medium.otf') format('opentype');
-} */
+@font-face {
+  font-family: GothamMedium;
+  src: url("../fonts/Gotham Medium.otf") format("opentype");
+}
 @font-face {
   font-family: GothamRegular;
   src: url("../fonts/GothamLight Regular.otf") format("opentype");
@@ -105,6 +105,14 @@ h4 {
 
 img {
   max-width: 100%;
+}
+
+button {
+  padding: 2% 4%;
+  border-radius: 2rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
 #app {
@@ -240,6 +248,11 @@ header nav > ul li:hover {
   background-color: #2850c4;
 }
 
+.btn-primary:focus, .btn-secondary:focus {
+  outline: 2px solid #fff;
+  outline-offset: -4px;
+}
+
 .btn-secondary {
   color: #000;
   border: 3px solid #000;
@@ -311,11 +324,6 @@ header nav > ul li:hover {
   opacity: 0;
 }
 #cars .car-inventory .car .car-specs .car-cta button {
-  padding: 2% 4%;
-  border-radius: 2rem;
-  text-decoration: none;
-  text-transform: uppercase;
-  cursor: pointer;
   width: 100%;
 }
 #cars .car-inventory .car .car-specs li h5 {
@@ -374,11 +382,6 @@ header nav > ul li:hover {
   margin-top: 10%;
 }
 #login button {
-  padding: 2% 4%;
-  border-radius: 2rem;
-  text-decoration: none;
-  text-transform: uppercase;
-  cursor: pointer;
   width: 100%;
   height: 3rem;
 }
@@ -472,7 +475,7 @@ form fieldset {
   text-align: center;
   background-color: #fff;
   margin-top: 10%;
-  padding: 0 5rem;
+  padding: 0 5rem 5rem;
   overflow-y: scroll;
 }
 #car #car-information h3, #car #car-information h4 {
@@ -480,13 +483,14 @@ form fieldset {
 }
 #car #car-information h3 {
   font-weight: bold;
+  margin-top: 17%;
 }
 #car #car-information h4 {
   font-size: 1rem;
   color: #333;
 }
 #car #car-information figure {
-  margin-bottom: 10%;
+  margin: 20% 0;
 }
 #car #car-information figure img {
   border-radius: 100%;
@@ -504,11 +508,15 @@ form fieldset {
 #car #car-information > ul li {
   margin-bottom: 7%;
 }
+#car #car-information button {
+  width: 100%;
+  height: 3rem;
+}
 #car #car-information #car-features {
   text-align: left;
   list-style-type: initial;
   color: #666;
-  margin-top: 7%;
+  margin-top: 12%;
 }
 #car #car-information .car-specs {
   display: flex;
@@ -516,7 +524,7 @@ form fieldset {
 }
 #car #car-information .car-specs h5 {
   font-size: 1.7rem;
-  color: #333;
+  color: #000;
 }
 #car #car-information .car-specs h5 span {
   font-size: 1rem;

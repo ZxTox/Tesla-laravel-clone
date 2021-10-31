@@ -60,15 +60,6 @@
             </li>
         </ul>
 
-        <figure>
-            <a href="#">
-                <img src="https://i.pinimg.com/736x/37/f8/3f/37f83f96dbc08d1b8e57f3cbac5918c1.jpg" alt="Elon Musk's profile picture">
-            </a>
-            <figcaption>
-              Elon Musk
-            </figcaption>
-          </figure>
-
         <ul>
             <li><p>Used Vehicule</p></li>
             <li><p>22,867 km odometer</p></li>
@@ -91,58 +82,22 @@
             <li><p>GPS Enabled Homelink</p></li>
             <li><p>Dark Ash Wood Décor</p></li>
             <li><p>Dark Headliner</p></li>
-
-
-            <li><p>Solid Black Paint</p></li>
-            <li><p>19" Silver Slipstream Wheels</p></li>
-            <li><p>Black Textile Interior</p></li>
-            <li><p>Full Self-Driving Capability</p></li>
-            <li><p>Smart Air Suspension</p></li>
-            <li><p>Sunroof</p></li>
-            <li><p>Keyless Entry</p></li>
-            <li><p>Power Liftgate</p></li>
-            <li><p>GPS Enabled Homelink</p></li>
-            <li><p>Dark Ash Wood Décor</p></li>
-            <li><p>Dark Headliner</p></li>
-
-            <li><p>Solid Black Paint</p></li>
-            <li><p>19" Silver Slipstream Wheels</p></li>
-            <li><p>Black Textile Interior</p></li>
-            <li><p>Full Self-Driving Capability</p></li>
-            <li><p>Smart Air Suspension</p></li>
-            <li><p>Sunroof</p></li>
-            <li><p>Keyless Entry</p></li>
-            <li><p>Power Liftgate</p></li>
-            <li><p>GPS Enabled Homelink</p></li>
-            <li><p>Dark Ash Wood Décor</p></li>
-            <li><p>Dark Headliner</p></li>
-
-
-            <li><p>Solid Black Paint</p></li>
-            <li><p>19" Silver Slipstream Wheels</p></li>
-            <li><p>Black Textile Interior</p></li>
-            <li><p>Full Self-Driving Capability</p></li>
-            <li><p>Smart Air Suspension</p></li>
-            <li><p>Sunroof</p></li>
-            <li><p>Keyless Entry</p></li>
-            <li><p>Power Liftgate</p></li>
-            <li><p>GPS Enabled Homelink</p></li>
-            <li><p>Dark Ash Wood Décor</p></li>
-            <li><p>Dark Headliner</p></li>
-
-
-            <li><p>Solid Black Paint</p></li>
-            <li><p>19" Silver Slipstream Wheels</p></li>
-            <li><p>Black Textile Interior</p></li>
-            <li><p>Full Self-Driving Capability</p></li>
-            <li><p>Smart Air Suspension</p></li>
-            <li><p>Sunroof</p></li>
-            <li><p>Keyless Entry</p></li>
-            <li><p>Power Liftgate</p></li>
-            <li><p>GPS Enabled Homelink</p></li>
-            <li><p>Dark Ash Wood Décor</p></li>
-            <li><p>Dark Headliner</p></li>
         </ul>
+
+
+        <h3>Seller details</h3>
+
+        <figure>
+            <a href="#">
+                <img src="https://i.pinimg.com/736x/37/f8/3f/37f83f96dbc08d1b8e57f3cbac5918c1.jpg" alt="Elon Musk's profile picture">
+            </a>
+            <figcaption>
+              Elon Musk
+            </figcaption>
+          </figure>
+
+
+          <button class="btn-primary">Contact Seller</button>
     </section>
 
 

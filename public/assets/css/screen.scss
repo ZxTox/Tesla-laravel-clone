@@ -68,6 +68,10 @@ img {
 	max-width: 100%;
 }
 
+button {
+	@include btn;
+}
+
 #app {
 	height: 100vh;
 	width: 100vw;
@@ -80,10 +84,6 @@ img {
 
 .hidden {
 	display: none;
-}
-
-.invinsible {
-	
 }
 
 #container {
@@ -227,6 +227,13 @@ $box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.27);
 	}
 }
 
+.btn-primary, .btn-secondary {
+	&:focus {
+		outline: 2px solid $white;
+		outline-offset: -4px;
+	}
+}
+
 .btn-secondary {
 	color: $black;
 	border: 3px solid $black;
@@ -309,7 +316,6 @@ $box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.27);
 					opacity: 0;
 
 					button {
-						@include btn;
 						width: 100%;
 					}
 				}
@@ -384,7 +390,6 @@ $box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.27);
 	}
 
 	button {
-		@include btn;
 		width: 100%;
 		height: 3rem;
 	}
@@ -507,7 +512,7 @@ form {
 		text-align: center;
 		background-color: $white;
 		margin-top: 10%;
-		padding: 0 5rem;
+		padding: 0 5rem 5rem;
 		overflow-y: scroll;
 
 		h3, h4 {
@@ -516,6 +521,7 @@ form {
 
 		h3 {
 			font-weight: bold;
+			margin-top: 17%;
 		}
 
 		h4 {
@@ -524,7 +530,7 @@ form {
 		}
 
 		figure {
-			margin-bottom: 10%;
+			margin: 20% 0;
 
 			img {
 				@include profile-picture(7rem);
@@ -543,11 +549,16 @@ form {
 			margin: 17% 0 10% 0;
 		}
 
+		button {
+			width: 100%;
+			height: 3rem;
+		}
+
 		#car-features {
 			text-align: left;
 			list-style-type: initial;
 			color: $dark-grey;
-			margin-top: 7%;
+			margin-top: 12%;
 		}
 
 		.car-specs {
@@ -556,7 +567,7 @@ form {
 
 			h5 {
 				font-size: 1.7rem;
-				color: $very-dark-grey;
+				color: $black;
 
 				span {
 					font-size: 1rem;
