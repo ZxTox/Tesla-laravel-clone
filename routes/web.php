@@ -18,8 +18,8 @@ use App\Http\Controllers\ViewController;
 Route::get('/', [ViewController::class, "showIndex"])->name("index");
 
 Route::group(["prefix" => "cars"], function() {
-    Route::get('/', [ViewController::class, "showCars"]);
-    Route::get('/{id}', [CarController::class, "showCar"]);
+    Route::get('/', [ViewController::class, "showCars"])->name("cars");
+    Route::get('/{id}', [CarController::class, "showCar"])->name("car");
 });
 
 

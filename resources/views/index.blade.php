@@ -27,7 +27,7 @@
                     <li><a href="{{ route("auth") }}">Authenticate</a></li>
                 @endguest
                 
-                <li><a href="#">Shop Cars</a></li>
+                <li><a href=" {{ route("cars") }} ">Shop Cars</a></li>
                 <li><a href="#">About Us</a></li>
             </ul>
         </section>
@@ -60,7 +60,7 @@
 
         <nav>
             <ul>
-                <li><a href="#">Shop</a></li>
+                <li><a href=" {{ route("cars") }} ">Shop</a></li>
                 <li><a href="{{ route("auth") }}">Auth</a></li>
                 <li class="menu-btn__popup"><a href="#">Menu</a></li>
             </ul>
