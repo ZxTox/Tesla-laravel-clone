@@ -580,7 +580,7 @@ form fieldset {
     min-height: 100%;
   }
   #car #car-information {
-    padding: 0 5rem;
+    padding: 0 5rem 1rem 5rem;
   }
   #car #car-information h3 {
     margin-top: unset;
