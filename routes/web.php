@@ -24,14 +24,12 @@ Route::group(["prefix" => "cars"], function() {
 });
 
 Route::group(["prefix" => "me"], function() {
-    Route::get('/', [UserController::class, "showMe"])->middleware("auth")->name("me");
-    Route::post('/', [UserController::class, "updateMe"])->middleware("auth")->name("updateMe");
+    Route::get('/', [UserController::class, "showMe"])->middleware("auth")->middleware("auth")->name("me");
+    Route::post('/', [UserController::class, "updateMe"])->middleware("auth")->middleware("auth")->name("updateMe");
 });
 
 
-
-
-Route::get('/auth', [ViewController::class, "showAuth"])->name("auth"); 
+Route::get('/auth', [ViewController::class, "showAuth"])->middleware("guest")->name("auth"); 
 
 Route::get('/dashboard', function () {
     return view('dashboard');
