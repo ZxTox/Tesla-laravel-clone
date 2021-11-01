@@ -18,8 +18,8 @@
 
 
     <div class="profile-tab">
-        <a href="#">Profile</a>
-        <a href="#">Password</a>
+        <a data-form="me-credentials" href="#">Profile</a>
+        <a data-form="me-password" href="#">Password</a>
     </div>
 
 
@@ -38,22 +38,37 @@
     @endif
     
 
-    <form method="POST" action="{{ route("updateMe") }}">
-    @csrf
-    <label for="name">Name</label>
-    <input type="text" name="name" id="name" value="{{ Auth::user() -> name }}" required>
+    <form id="me-credentials" method="POST" action="{{ route("updateMe") }}">
+        @csrf
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" value="{{ Auth::user() -> name }}" required>
 
-    <label for="email">Email Address</label>
-    <input type="email" name="email" id="email" value="{{ Auth::user() -> email }}" required>
+        <label for="email">Email Address</label>
+        <input type="email" name="email" id="email" value="{{ Auth::user() -> email }}" required>
 
-    <input class="btn-primary" type="submit" value="Save Changes">
+        <input class="btn-primary" type="submit" value="Save Changes">
+    </form>
 
-</form>
+    <form id="me-password" class="hidden" method="POST" action="{{ route("updateMe") }}">
+        @csrf
+
+        <label for="password_old">Old Password</label>
+        <input type="password" name="password_old" id="password_old" required>
+
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required>
+
+        <label for="password_confirmation">Confirm Password</label>
+        <input type="password" name="password_confirmation" id="password_confirmation" required>
+
+        <input class="btn-primary" type="submit" value="Apply Password">
+    </form>
 
 </section>
 
 
 <script src="{{ asset("/assets/js/alert.js") }}"></script>
+<script src="{{ asset("/assets/js/me.js") }}"></script>
 
 @isset($message)
     <script type="text/javascript">

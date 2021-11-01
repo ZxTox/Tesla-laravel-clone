@@ -618,12 +618,6 @@ form input:not(input[type=submit]):hover {
   border-radius: 50px;
   position: relative;
 }
-.profile-tab .active-background {
-  position: absolute;
-  background-color: #fff;
-  left: 0;
-  top: 0;
-}
 .profile-tab a {
   padding: 0.4rem 0.8rem;
   border-radius: 50px;
