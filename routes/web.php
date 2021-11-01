@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ViewController;
 
 /*
@@ -21,6 +22,13 @@ Route::group(["prefix" => "cars"], function() {
     Route::get('/', [ViewController::class, "showCars"])->name("cars");
     Route::get('/{id}', [CarController::class, "showCar"])->name("car");
 });
+
+Route::group(["prefix" => "me"], function() {
+    Route::get('/', [UserController::class, "showMe"])->middleware("auth")->name("me");
+    Route::post('/', [UserController::class, "updateMe"])->middleware("auth")->name("updateMe");
+});
+
+
 
 
 Route::get('/auth', [ViewController::class, "showAuth"])->name("auth"); 

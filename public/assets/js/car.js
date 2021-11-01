@@ -64,9 +64,9 @@ function init() {
         const $img = document.querySelector("img");
 
         $img.style.opacity = 0;
+        $img.src = images[currentIndex % images.length];
 
         setTimeout(() => {
-            $img.src = images[currentIndex % images.length];
             $img.style.opacity = 1;
         }, 247);
     }

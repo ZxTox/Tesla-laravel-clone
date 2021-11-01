@@ -1,17 +1,10 @@
-@extends("layouts/master")
+@extends("layouts.master")
 
 @section('head')
     <title>Tesell | Login</title>
 @endsection
 
 @section("content")
-
-
-@auth
-    <script>
-    window.location = "{{ route('dashboard') }}";
-  </script>
-@endauth
 
 @extends("layouts.header")
 

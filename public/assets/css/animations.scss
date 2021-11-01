@@ -78,3 +78,13 @@ $animation-duration: 0.3s;
 		transform: translateY(2rem);
 	}
 }
+
+@keyframes widthAnimate {
+	0% {
+		width: 0%;
+	}
+
+	100% {
+		width: 100%;
+	}
+}
