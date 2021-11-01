@@ -287,6 +287,12 @@ header nav > ul li:hover {
   color: #fff;
 }
 
+.error {
+  margin-bottom: 7%;
+  color: #cc0000;
+  line-height: 1.4;
+}
+
 #cars {
   background-color: #f4f4f4;
   padding: 2.2rem;
@@ -376,10 +382,6 @@ header nav > ul li:hover {
   font-family: "GothamMedium";
   margin-bottom: 8%;
 }
-#login p {
-  margin-bottom: 10%;
-  color: #cc0000;
-}
 #login span {
   color: #999;
   display: block;
@@ -437,7 +439,7 @@ form input:not(input[type=submit]) {
   color: #333;
   padding-left: 7%;
 }
-form input:not(input[type=submit]):not(input[type=text]) {
+form input:not(input[type=submit]):not(input[type=text]) form input:not(input[type=submit]):not(input[type=email]) {
   letter-spacing: 4px;
   position: relative;
 }

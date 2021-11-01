@@ -12,9 +12,15 @@
 
     <h3>Sign In</h3>
     <h3 class="hidden">Sign Up</h3>
-    @foreach ($errors->all() as $error)
-    <p>{{ $error }}</p>  
+    @isset($errors)
+    <div class="error">
+        @foreach ($errors->all() as $error)
+    
+        <p>{{ $error }}</p>  
+    
     @endforeach
+    </div>
+    @endisset
 
             
         <form id="login-form" method="POST" action="{{ route('login') }}">

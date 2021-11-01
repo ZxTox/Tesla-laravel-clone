@@ -19,21 +19,28 @@
 
     <h3>Welcome, {{ Auth::user() -> name }}</h3>
 
-    @foreach ($errors->all() as $error)
-    <p>{{ $error }}</p>  
+    @isset($errors)
+    <div class="error">
+        @foreach ($errors->all() as $error)
+    
+        <p>{{ $error }}</p>  
+    
     @endforeach
+    </div>
+    @endisset
+    
 
     
 
     <form method="POST" action="{{ route("updateMe") }}">
     @csrf
     <label for="name">Name</label>
-    <input type="text" name="name" id="name" value="{{ Auth::user() -> name }}">
+    <input type="text" name="name" id="name" value="{{ Auth::user() -> name }}" required>
 
 
 
     <label for="email">Email Address</label>
-    <input type="text" name="email" id="email" value="{{ Auth::user() -> email }}">
+    <input type="email" name="email" id="email" value="{{ Auth::user() -> email }}" required>
 
     <input class="btn-primary" type="submit" value="Save Changes">
 

@@ -33,8 +33,8 @@ class UserController extends Controller
 
     function performValidation(Request $request) {
         $rules = [
-            "name" => "string|required|min:1|max:255",
-            "email" => "email|required|min:1|max:255",
+            "name" => "string|required|min:3|max:255",
+            "email" => "email|required|min:5|max:255",
         ];
 
         return $request -> validate($rules);
