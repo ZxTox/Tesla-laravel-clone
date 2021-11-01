@@ -250,12 +250,18 @@ header nav > ul li:hover {
 }
 
 @media screen and (max-width: 50em) {
+  header {
+    grid-template-columns: 200px min-content;
+  }
+
   nav {
     display: none;
   }
 
   #hamburger {
-    display: inline-block;
+    display: block;
+    justify-self: flex-end;
+    margin-right: 1rem;
   }
 }
 .btn-primary {
