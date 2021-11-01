@@ -37,6 +37,7 @@ function init() {
         <ul class="car-specs">
             <div class="car-cta">
                 <button class="btn-primary">Contact buyer</button>
+
                 <button class="btn-secondary">View Details</button>
             </div>
             <li>

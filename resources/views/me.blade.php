@@ -1,7 +1,7 @@
 @extends("layouts/master")
 
 @section('head')
-    <title>Tesell | Login</title>
+    <title>Tesell | {{ explode(" ",Auth::user() -> name)[0] }}'s profile</title>
 @endsection
 
 @section("content")
@@ -17,13 +17,6 @@
     <h3>Welcome, {{ Auth::user() -> name }}</h3>
 
 
-    <div class="profile-tab">
-        <a data-form="me-credentials" href="#">Profile</a>
-        <a data-form="me-password" href="#">Password</a>
-    </div>
-
-
-
     @if(count($errors->all()) > 0)
     <div class="error">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -36,6 +29,13 @@
     @endforeach
     </div>
     @endif
+
+
+    <div class="profile-tab">
+        <a data-form="me-credentials" href="#">Profile</a>
+        <a data-form="me-password" href="#">Password</a>
+    </div>
+
     
 
     <form id="me-credentials" method="POST" action="{{ route("updateMe") }}">

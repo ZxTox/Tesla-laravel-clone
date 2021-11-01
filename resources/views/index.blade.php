@@ -20,7 +20,7 @@
 
 
                 @auth
-                    <li><a href="{{ route("dashboard") }}">Account Settings</a></li>
+                    <li><a href="{{ route("me") }}">Account Settings</a></li>
                 @endauth
 
                 @guest

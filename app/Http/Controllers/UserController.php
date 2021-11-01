@@ -16,7 +16,8 @@ class UserController extends Controller
         $validated = $this -> performValidation($request);
         $user = $this -> saveUser($validated);
 
-        return view("me", ["message" => "Profile successfully updated!"]);
+        return back()->with("message", "Profile successfully updated!");
+        //return view("me", ["message" => "Profile successfully updated!"]);
     }
 
     function saveUser($data) {
