@@ -23,9 +23,3 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::group(["prefix" => "cars"], function() {
     Route::get("/", [CarController::class, 'getAllCars']);
 });
-
-Route::get('/offers', function () {
-    $offers = Offer::all();
-
-    return response()->json($offers, 200);
-});

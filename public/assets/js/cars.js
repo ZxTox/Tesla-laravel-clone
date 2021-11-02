@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", init);
 
-const CARS_API_ENDPOINT = "/api/offers";
+const CARS_API_ENDPOINT = "/api/cars";
 
 function init() {
 

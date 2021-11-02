@@ -12,12 +12,10 @@ class CarController extends Controller
 {
     
     function getAllCars(Request $request) {
-        $cars = Car::join('carmodels', 'cars.model', '=', 'carmodels.id')->join('users', 'cars.seller', '=', 'users.id')
-        ->select('cars.car', 'cars.price', 'cars.mileage', 'cars.description', 'carmodels.name as modelName', 'carmodels.description', 'carmodels.mileage', 'carmodels.hp', 'carmodels.hp',
-        'carmodels.range', 'carmodels.topspeed', 'carmodels.year', 'carmodels.acceleration')
-        ->get();
-        return response()->json($cars, 200);
-    } 
+        $offers = Offer::join('users', 'offers.seller', '=', 'users.id')->select('offers.*', 'users.email', 'users.name')->get();
+
+        return response()->json($offers, 200);
+    }
 
     function showCar(Request $request, $car) {
         $carModel = Offer::where('offerid', $car)->first();
