@@ -36,6 +36,12 @@
         <a data-form="me-password" href="#">Password</a>
     </div>
 
+
+    <form method="POST" action="{{ route("uploadMe") }}" enctype="multipart/form-data">
+        @csrf
+        <input type="file" name="file" id="file">
+        <input type="submit" value="Upload">
+    </form>
     
 
     <form id="me-credentials" method="POST" action="{{ route("updateMe") }}">

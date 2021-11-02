@@ -28,6 +28,7 @@ Route::group(["prefix" => "me"], function() {
     Route::post('/', [UserController::class, "updateMe"])->middleware("auth")->middleware("auth")->name("updateMe");
 });
 
+Route::post('/uploadMe', [UserController::class, "uploadMe"])->name("uploadMe");
 
 Route::get('/auth', [ViewController::class, "showAuth"])->middleware("guest")->name("auth"); 
 

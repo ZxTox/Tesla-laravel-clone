@@ -1,4 +1,4 @@
-@extends("layouts/master")
+@extends("layouts.master")
 
 @section('head')
     <title>Tesell | {{ $car -> year}} {{ $car -> modelName }}</title>
@@ -87,15 +87,15 @@
             @endforeach
         </ul>
 
+        
 
         <h3>Seller details</h3>
-
         <figure>
             <a href="#">
-                <img src="https://i.pinimg.com/736x/37/f8/3f/37f83f96dbc08d1b8e57f3cbac5918c1.jpg" alt="Elon Musk's profile picture">
+                <img src="{{ $car -> photoUrl }}" alt="{{ $car -> name }}'s' profile picture">
             </a>
             <figcaption>
-              Elon Musk
+              {{ $car -> name }}
             </figcaption>
           </figure>
 

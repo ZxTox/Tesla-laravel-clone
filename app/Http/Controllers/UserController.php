@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
 class UserController extends Controller
 {
@@ -39,6 +40,15 @@ class UserController extends Controller
         ];
 
         return $request -> validate($rules);
+    }
+
+    function uploadMe(Request $request) {
+        $uploadedFileUrl = Cloudinary::upload($request->file('file')->getRealPath())->getSecurePath();
+        $user = User::find(Auth::user() -> id);
+        $user -> photoUrl = $uploadedFileUrl;
+        $user -> save();
+        
+        dd($uploadedFileUrl);
     }
 
 }
