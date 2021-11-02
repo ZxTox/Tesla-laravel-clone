@@ -20,7 +20,7 @@ class CarController extends Controller
     } 
 
     function showCar(Request $request, $car) {
-        $carModel = Offer::where('offerid', 1)->first();
+        $carModel = Offer::where('offerid', $car)->first();
         $featuresIds = json_decode($carModel -> featureslist);
         $features = Feature::whereIn('id', $featuresIds)->get();
 
