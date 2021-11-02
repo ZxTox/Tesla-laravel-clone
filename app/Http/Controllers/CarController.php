@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Car;
 use App\Models\Carmodel;
+use App\Models\Feature;
+use App\Models\Offer;
 
 class CarController extends Controller
 {
@@ -18,9 +20,10 @@ class CarController extends Controller
     } 
 
     function showCar(Request $request, $car) {
-        $view_controller = new ViewController;
-        $car = Carmodel::find($car);
-        
-        return $view_controller->showCar($car);
+        $carModel = Offer::where('offerid', 1)->first();
+        $featuresIds = json_decode($carModel -> featureslist);
+        $features = Feature::whereIn('id', $featuresIds)->get();
+
+        return view('car', ["car" => $carModel, "features" => $features]);
     }
 }
