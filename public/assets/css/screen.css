@@ -126,7 +126,7 @@ img {
   max-width: 100%;
 }
 
-button {
+button, a.btn-secondary, a.btn-primary {
   padding: 2% 4%;
   border-radius: 2rem;
   text-decoration: none;
@@ -360,8 +360,9 @@ header nav > ul li:hover {
   display: none;
   opacity: 0;
 }
-#cars .car-inventory .car .car-specs .car-cta button {
+#cars .car-inventory .car .car-specs .car-cta button, #cars .car-inventory .car .car-specs .car-cta a {
   width: 100%;
+  height: 3rem;
 }
 #cars .car-inventory .car .car-specs li h5 {
   font-weight: normal;
