@@ -44,28 +44,50 @@
         <label for="type">Type</label>
         <input type="text" name="type" id="type">
 
+        <label for="year">Year</label>
+        <input type="number" name="year" id="year">
+
         <fieldset>
             @foreach ($features as $feature)
             <div>
                 <input type="checkbox" id="feature-{{ $feature -> id }}" name="features" value="{{ $feature -> id }}">
-                <label for="feature-{{ $feature -> id }}">{{ $feature -> feature_name }}</label>
+                <label class="checkbox-label" for="feature-{{ $feature -> id }}">{{ $feature -> feature_name }}</label>
             </div>
             @endforeach
         </fieldset>
+
+
+        <label for="price">Price</label>
+        <input type="number" name="price" id="price">
+
+        <label for="odometer">Odometer</label>
+        <input type="text" name="odometer" id="odometer">
+
+        <label for="accel">Acceleration</label>
+        <input type="number" name="accel" id="accel">
+
+        <label for="range">Range</label>
+        <input type="number" name="range" id="range">
+
+        <label for="topspeed">Top Speed</label>
+        <input type="number" name="topspeed" id="topspeed">
+
+        <label for="image-1">Image</label>
+        <input type="file" name="carimages" id="carimages" multiple>
+
+        <p id="files"></p>
+
+
+        <div class="files">
+           
+        </div>
     </form>
 
     
 </section>
 
+<script src="{{ asset("assets/js/add-car.js") }}"></script>
 
-<script src="{{ asset("/assets/js/alert.js") }}"></script>
-<script src="{{ asset("/assets/js/me.js") }}"></script>
-
-@if(session()->has('message'))
-    <script type="text/javascript">
-        animateAlert("{{session()->get('message')}}");
-    </script>
-@endif
 @endsection
 
 

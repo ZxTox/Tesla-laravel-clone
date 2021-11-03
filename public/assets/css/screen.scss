@@ -420,6 +420,17 @@ form {
 		margin-left: 7%;
 		font-weight: bold;
 	}
+
+	div {
+		margin-bottom: 7%;
+	}
+
+	.checkbox-label {
+		color: $dark-grey;
+		margin: unset;
+		display: inline-block;
+	}
+
 	input:not(input[type="checkbox"]), select {
 		background-color: lighten($light-grey, 17%);
 		display: flex;
@@ -654,6 +665,22 @@ form {
 		border-radius: 50px;
 		width: 11rem;
 		text-align: center;
+	}
+}
+
+.files {
+	background-color: $light-grey;
+	padding: 2rem;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	justify-content: center;
+	text-align: center;
+	gap: 2rem;
+
+	.file {
+		img {
+			max-width: 100%;
+		}
 	}
 }
 

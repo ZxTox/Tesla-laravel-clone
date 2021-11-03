@@ -427,6 +427,14 @@ form label {
   margin-left: 7%;
   font-weight: bold;
 }
+form div {
+  margin-bottom: 7%;
+}
+form .checkbox-label {
+  color: #666;
+  margin: unset;
+  display: inline-block;
+}
 form input:not(input[type=checkbox]), form select {
   background-color: #f7f7f7;
   display: flex;
@@ -621,6 +629,19 @@ form input:not(input[type=checkbox]):not(input[type=submit]):hover, form select:
   border-radius: 50px;
   width: 11rem;
   text-align: center;
+}
+
+.files {
+  background-color: #ccc;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  text-align: center;
+  gap: 2rem;
+}
+.files .file img {
+  max-width: 100%;
 }
 
 @media screen and (max-width: 50em) {
