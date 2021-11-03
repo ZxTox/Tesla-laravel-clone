@@ -17,7 +17,7 @@ class UserController extends Controller
         $validated = $this -> performValidation($request);
         $user = $this -> saveUser($validated);
 
-        return back()->with("message", "Profile successfully updated!");
+        return redirect()->back()->with("message", "Profile successfully updated!");
         //return view("me", ["message" => "Profile successfully updated!"]);
     }
 
@@ -47,8 +47,8 @@ class UserController extends Controller
         $user = User::find(Auth::user() -> id);
         $user -> photoUrl = $uploadedFileUrl;
         $user -> save();
-        
-        dd($uploadedFileUrl);
+
+        return back();
     }
 
 }

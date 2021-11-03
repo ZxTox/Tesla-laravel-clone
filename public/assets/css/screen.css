@@ -427,7 +427,7 @@ form label {
   margin-left: 7%;
   font-weight: bold;
 }
-form input {
+form input:not(input[type=checkbox]), form select {
   background-color: #f7f7f7;
   display: flex;
   margin-bottom: 1.8rem;
@@ -435,23 +435,19 @@ form input {
   border-radius: 10rem;
   line-height: 2;
 }
-form input[type=submit] {
+form input:not(input[type=checkbox])[type=submit], form select[type=submit] {
   text-transform: uppercase;
   height: 3rem;
   cursor: pointer;
 }
-form input:not(input[type=submit]) {
+form input:not(input[type=checkbox]):not(input[type=submit]), form select:not(input[type=submit]) {
   border: unset;
   outline: unset;
   font-size: 1.4rem;
   color: #333;
   padding-left: 7%;
 }
-form input:not(input[type=submit]):not(input[type=text]) form input:not(input[type=submit]):not(input[type=email]) {
-  letter-spacing: 4px;
-  position: relative;
-}
-form input:not(input[type=submit]):hover {
+form input:not(input[type=checkbox]):not(input[type=submit]):hover, form select:not(input[type=submit]):hover {
   outline: 0.02rem solid #999;
 }
 

@@ -36,7 +36,7 @@
         <a data-form="me-password" href="#">Password</a>
     </div>
 
-
+    
     <form method="POST" action="{{ route("uploadMe") }}" enctype="multipart/form-data">
         @csrf
         <input type="file" name="file" id="file">
@@ -76,9 +76,9 @@
 <script src="{{ asset("/assets/js/alert.js") }}"></script>
 <script src="{{ asset("/assets/js/me.js") }}"></script>
 
-@isset($message)
+@if(session()->has('message'))
     <script type="text/javascript">
-        animateAlert("{{$message}}");
+        animateAlert("{{session()->get('message')}}");
     </script>
-@endisset
+@endif
 @endsection

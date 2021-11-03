@@ -420,7 +420,7 @@ form {
 		margin-left: 7%;
 		font-weight: bold;
 	}
-	input {
+	input:not(input[type="checkbox"]), select {
 		background-color: lighten($light-grey, 17%);
 		display: flex;
 		margin-bottom: 1.8rem;
@@ -440,12 +440,6 @@ form {
 			font-size: 1.4rem;
 			color: $very-dark-grey;
 			padding-left: 7%;
-			
-			&:not(input[type="text"]) &:not(input[type="email"]) {
-				letter-spacing: 4px;
-				position: relative;
-			}
-
 
 			&:hover {
 				outline: 0.02rem solid $medium-grey;

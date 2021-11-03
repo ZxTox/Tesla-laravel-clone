@@ -24,4 +24,9 @@ class CarController extends Controller
 
         return view('car', ["car" => $carModel, "features" => $features]);
     }
+
+    function addOffer() {
+        $features = Feature::all();
+        return view('add-offer', ["features" => $features]);
+    }
 }
