@@ -29,6 +29,7 @@
             </a>
         <img
             src="{{ json_decode($car -> images)[0] }}"
+            data-images="{{ join(" ", json_decode($car -> images))  }}"
             alt="{{ $car -> modelName }}"
             loading="lazy"
         />
