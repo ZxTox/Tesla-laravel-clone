@@ -431,7 +431,14 @@ form {
 		display: inline-block;
 	}
 
-	input:not(input[type="checkbox"]), select {
+	input[type="checkbox"] {
+		display: inline-block;
+		margin: unset;
+		width: unset;
+		
+	}
+
+	input, select {
 		background-color: lighten($light-grey, 17%);
 		display: flex;
 		margin-bottom: 1.8rem;

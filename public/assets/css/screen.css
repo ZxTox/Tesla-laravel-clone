@@ -435,7 +435,12 @@ form .checkbox-label {
   margin: unset;
   display: inline-block;
 }
-form input:not(input[type=checkbox]), form select {
+form input[type=checkbox] {
+  display: inline-block;
+  margin: unset;
+  width: unset;
+}
+form input, form select {
   background-color: #f7f7f7;
   display: flex;
   margin-bottom: 1.8rem;
@@ -443,19 +448,19 @@ form input:not(input[type=checkbox]), form select {
   border-radius: 10rem;
   line-height: 2;
 }
-form input:not(input[type=checkbox])[type=submit], form select[type=submit] {
+form input[type=submit], form select[type=submit] {
   text-transform: uppercase;
   height: 3rem;
   cursor: pointer;
 }
-form input:not(input[type=checkbox]):not(input[type=submit]), form select:not(input[type=submit]) {
+form input:not(input[type=submit]), form select:not(input[type=submit]) {
   border: unset;
   outline: unset;
   font-size: 1.4rem;
   color: #333;
   padding-left: 7%;
 }
-form input:not(input[type=checkbox]):not(input[type=submit]):hover, form select:not(input[type=submit]):hover {
+form input:not(input[type=submit]):hover, form select:not(input[type=submit]):hover {
   outline: 0.02rem solid #999;
 }
 

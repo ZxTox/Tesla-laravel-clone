@@ -10,7 +10,7 @@ use App\Models\Offer;
 
 class CarController extends Controller
 {
-    
+
     function getAllCars(Request $request) {
         $offers = Offer::join('users', 'offers.seller', '=', 'users.id')->select('offers.*', 'users.email', 'users.name', 'users.photoUrl')->get();
 
@@ -25,8 +25,12 @@ class CarController extends Controller
         return view('car', ["car" => $carModel, "features" => $features]);
     }
 
-    function addOffer() {
+    function showAddCarForm() {
         $features = Feature::all();
         return view('add-offer', ["features" => $features]);
+    }
+
+    function addCar(Request $request) {
+        dd($request->input("features"));
     }
 }

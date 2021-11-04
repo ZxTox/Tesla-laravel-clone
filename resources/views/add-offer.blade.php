@@ -6,9 +6,6 @@
 
 @section("content")
 
-
-
-
 @include("layouts.header")
 
 
@@ -25,12 +22,12 @@
         @foreach ($errors->all() as $error)
     
         <p>{{ $error }}</p>  
-    
+
     @endforeach
     </div>
     @endif
 
-    <form action="#">
+    <form method="POST" action="{{ route("addCar") }}" enctype="multipart/form-data">
         @csrf
 
         <label for="model">Model</label>
@@ -50,7 +47,7 @@
         <fieldset>
             @foreach ($features as $feature)
             <div>
-                <input type="checkbox" id="feature-{{ $feature -> id }}" name="features" value="{{ $feature -> id }}">
+                <input type="checkbox" id="feature-{{ $feature -> id }}" name="features[]" value="{{ $feature -> id }}">
                 <label class="checkbox-label" for="feature-{{ $feature -> id }}">{{ $feature -> feature_name }}</label>
             </div>
             @endforeach
@@ -73,7 +70,7 @@
         <input type="number" name="topspeed" id="topspeed">
 
         <label for="image-1">Image</label>
-        <input type="file" name="carimages" id="carimages" multiple>
+        <input type="file" name="carimages[]" id="carimages" multiple>
 
         <p id="files"></p>
 
@@ -81,6 +78,8 @@
         <div class="files">
            
         </div>
+
+        <input class="btn-primary" type="submit" value="Add Car">
     </form>
 
     
