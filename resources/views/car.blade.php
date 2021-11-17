@@ -98,7 +98,7 @@
             <figcaption>
               {{ $car -> name }}
             </figcaption>
-          </figure>
+        </figure>
 
 
           <button class="btn-primary">Contact Seller</button>

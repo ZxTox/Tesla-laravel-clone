@@ -29,6 +29,7 @@ Route::group(["prefix" => "me"], function() {
 });
 
 Route::post('/uploadMe', [UserController::class, "uploadMe"])->name("uploadMe")->middleware("auth");
+Route::get('/myoffers', [CarController::class, "showMyOffers"])->name("myoffers")->middleware("auth");
 
 Route::group(["prefix" => "addoffer"], function() {
     Route::get('/', [CarController::class, "showAddCarForm"])->name("addCarForm");

@@ -34,13 +34,21 @@
     <div class="profile-tab">
         <a data-form="me-credentials" href="#">Profile</a>
         <a data-form="me-password" href="#">Password</a>
+        <a data-form="me-photo" href="#">Photo Profile</a>
     </div>
 
     
-    <form method="POST" action="{{ route("uploadMe") }}" enctype="multipart/form-data">
+    <form id="me-photo" class="hidden" method="POST" action="{{ route("uploadMe") }}" enctype="multipart/form-data">
         @csrf
+        <figure>
+            <img src="{{ Auth::user() -> photoUrl }}" alt="{{ Auth::user() -> name }}'s' profile picture">
+            <figcaption>
+                {{ Auth::user() -> name }}
+            </figcaption>
+        </figure>
+
         <input type="file" name="file" id="file">
-        <input type="submit" value="Upload">
+        <input class="btn-primary" type="submit" value="Upload">
     </form>
     
 

@@ -32,6 +32,11 @@ class CarController extends Controller
         return view('add-offer', ["features" => $features]);
     }
 
+    function showMyOffers() {
+        $offers = Offer::where('seller', Auth::user() -> id)->get();
+        return view("my-offers", ["offers" => $offers]);
+    }
+
     function addCar(Request $request) {
         $results = $this -> validateOffer($request);
 

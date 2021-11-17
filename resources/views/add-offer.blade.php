@@ -72,9 +72,6 @@
         <label for="image-1">Image</label>
         <input type="file" name="carimages[]" id="carimages" multiple>
 
-        <p id="files"></p>
-
-
         <div class="files">
            
         </div>

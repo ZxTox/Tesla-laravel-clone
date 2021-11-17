@@ -154,6 +154,7 @@ button, a.btn-secondary, a.btn-primary {
 a {
   text-decoration: none;
   color: inherit;
+  display: inline-block;
 }
 
 header {
@@ -342,6 +343,8 @@ header nav > ul li:hover {
 }
 #cars .car-inventory .car img {
   grid-area: img;
+  margin: 4% 0;
+  border-radius: 10px;
 }
 #cars .car-inventory .car .car-specs {
   grid-area: specs;
@@ -418,6 +421,19 @@ header nav > ul li:hover {
 .credentials__form button {
   width: 100%;
   height: 3rem;
+}
+.credentials__form #me-photo > figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 7% 0;
+}
+.credentials__form #me-photo > figure > img {
+  border-radius: 100%;
+  width: 7rem;
+  height: 7rem;
+  object-fit: cover;
+  object-position: center top;
 }
 
 form label {
@@ -627,13 +643,6 @@ form input:not(input[type=submit]):hover, form select:not(input[type=submit]):ho
   align-items: center;
   margin-bottom: 4%;
   border-radius: 50px;
-  position: relative;
-}
-.profile-tab a {
-  padding: 0.4rem 0.8rem;
-  border-radius: 50px;
-  width: 11rem;
-  text-align: center;
 }
 
 .files {
@@ -647,6 +656,19 @@ form input:not(input[type=submit]):hover, form select:not(input[type=submit]):ho
 }
 .files .file img {
   max-width: 100%;
+}
+
+#offers {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8%;
+}
+#offers .offer {
+  background-color: #fff;
+  width: 100%;
+  height: 10rem;
+  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
 }
 
 @media screen and (max-width: 50em) {
