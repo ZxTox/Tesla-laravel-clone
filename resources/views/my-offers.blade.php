@@ -8,10 +8,13 @@
 @include("layouts.header")
 
 <div id="container">
-    <h2>My Offers</h2>
+    
 
-    <section id="offers">
-        @foreach ($offers as $offer)
+    <section id="my-offers">
+        <h2>My Offers</h2>
+
+        <div class="offers">
+            @foreach ($offers as $offer)
             <div class="offer">
 
                 <h3>{{ $offer -> modelName }}</h3>
@@ -22,6 +25,8 @@
                 
             </div>
         @endforeach
+        </div>
+        
     </section>
 </div>
 

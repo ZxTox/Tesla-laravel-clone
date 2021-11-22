@@ -21,6 +21,9 @@
 
                 @auth
                     <li><a href="{{ route("me") }}">Account Settings</a></li>
+
+                    <li><a href="{{ route("addCarForm") }}">Add car</a></li>
+                    <li><a href="{{ route("myoffers") }}">My car offers</a></li>
                 @endauth
 
                 @guest
