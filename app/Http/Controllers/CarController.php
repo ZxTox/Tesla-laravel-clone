@@ -64,7 +64,7 @@ class CarController extends Controller
 
         $offer -> save();
 
-        return redirect()->back()->with("message", "Profile successfully updated!");
+        return redirect()->back()->with("message", "Car successfully updated!");
     }
 
     function validateOffer(Request $request) {

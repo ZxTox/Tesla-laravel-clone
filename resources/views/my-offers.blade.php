@@ -30,4 +30,13 @@
     </section>
 </div>
 
+
+
+<div id="car-graph">
+    <canvas></canvas>
+    <canvas></canvas>
+</div>
+
+<script src="{{ asset('assets/js/chart.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 @endsection

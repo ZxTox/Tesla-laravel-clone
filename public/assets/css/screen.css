@@ -675,6 +675,14 @@ form input:not(input[type=submit]):hover, form select:not(input[type=submit]):ho
   border-radius: 10px;
 }
 
+#car-graph {
+  width: 27%;
+  display: flex;
+}
+#car-graph canvas {
+  background-color: transparent;
+}
+
 @media screen and (max-width: 50em) {
   #cars .car-inventory {
     grid-template-columns: 1fr;

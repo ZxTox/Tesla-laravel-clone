@@ -718,6 +718,14 @@ form {
 	
 }
 
+#car-graph {
+	width: 27%;
+	display: flex;
+	canvas {
+		background-color: transparent;
+	}
+}
+
 @media screen and (max-width: 50em) {
 	#cars {
 		.car-inventory {
