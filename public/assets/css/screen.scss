@@ -726,6 +726,32 @@ form {
 	}
 }
 
+.marker {
+	background-image: url('https://www.freepnglogos.com/uploads/pin-png/flat-design-map-pin-transparent-png-stickpng-18.png');
+	background-size: cover;
+	width: 32px;
+	height: 40px;
+	cursor: pointer;
+}
+
+.mapboxgl-popup {
+	max-width: 25rem;
+  }
+  
+  .mapboxgl-popup-content {
+	text-align: center;
+	font-family: 'Lato', sans-serif;
+	padding: 1.5rem !important;
+	font-size: 1.4rem;
+	-webkit-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15) !important;
+	box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15) !important;
+  }
+
+#map {
+	width: 1000px;
+	height: 1000px;
+}
+
 @media screen and (max-width: 50em) {
 	#cars {
 		.car-inventory {
