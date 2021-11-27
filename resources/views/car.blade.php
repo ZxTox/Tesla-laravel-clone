@@ -41,7 +41,7 @@
     <section id="car-information">
 
 
-        <div>
+        <div id="scroll-down">
             <svg width="32" height="20" viewBox="0 0 32 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0.444092 3.51918L15.9999 19.075L31.5558 3.51918L28.9634 0.925015L15.9999 13.8903L3.03642 0.925015L0.444092 3.51918Z" fill="#404040"/>
             </svg>
@@ -102,7 +102,7 @@
         </figure>
 
 
-          <button class="btn-primary">Contact Seller</button>
+          <button class="btn btn-primary">Contact Seller</button>
 
 
 
