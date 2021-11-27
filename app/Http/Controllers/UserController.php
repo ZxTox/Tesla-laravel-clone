@@ -21,6 +21,15 @@ class UserController extends Controller
         //return view("me", ["message" => "Profile successfully updated!"]);
     }
 
+    function saveLocationUser(Request $request) {
+        $user = User::find(Auth::user() -> id);
+
+        $user -> location = $request->input('coords');
+        $user -> save();
+
+        return redirect()->back()->with("message", "Location successfully updated!");
+    }
+
     function saveUser($data) {
         $user = User::find(Auth::user() -> id);
 

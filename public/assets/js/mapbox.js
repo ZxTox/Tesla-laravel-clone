@@ -89,7 +89,7 @@ async function loadMap(locations) {
         }
     });
 
-    document.querySelector("#map").dataset.coords = JSON.stringify(locations[0].coordinates);
+    document.querySelector("#coords").value = JSON.stringify(locations[0].coordinates);
     document.querySelector("#me-location > p").innerText = locations[0].location;
 }
 

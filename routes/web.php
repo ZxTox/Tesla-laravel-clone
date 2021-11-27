@@ -26,6 +26,7 @@ Route::group(["prefix" => "cars"], function() {
 Route::group(["prefix" => "me"], function() {
     Route::get('/', [UserController::class, "showMe"])->middleware("auth")->middleware("auth")->name("me");
     Route::post('/', [UserController::class, "updateMe"])->middleware("auth")->middleware("auth")->name("updateMe");
+    Route::post('/location', [UserController::class, "saveLocationUser"])->middleware("auth")->middleware("auth")->name("saveLocation");
 });
 
 Route::post('/uploadMe', [UserController::class, "uploadMe"])->name("uploadMe")->middleware("auth");

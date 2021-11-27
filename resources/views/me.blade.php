@@ -65,12 +65,13 @@
         <input class="btn-primary" type="submit" value="Save Changes">
     </form>
 
-    <form id="me-location" class="hidden" method="POST" action="{{ route("updateMe") }}">
+    <form id="me-location" class="hidden" method="POST" action="{{ route("saveLocation") }}">
         @csrf
 
         <button type="button" class="btn btn-secondary">Get My Location</button>
-        <p>No location...</p>
+        <p>{{ Auth::user() -> location }}</p>
         <div id="map"></div>
+        <input type="hidden" name="coords" id="coords" />
 
 
         <input class="btn-primary" type="submit" value="Apply my location">
@@ -79,6 +80,7 @@
 </section>
 
 
+<script src="{{ asset("assets/js/alert.js") }}"></script>
 <script src="{{ asset("/assets/js/me.js") }}"></script>
 <script src="{{ asset("assets/js/mapbox.js") }}"></script>
 
