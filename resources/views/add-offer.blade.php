@@ -2,6 +2,8 @@
 
 @section('head')
     <title>Tesell | {{ explode(" ",Auth::user() -> name)[0] }}'s profile</title>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
 @endsection
 
 @section("content")
@@ -69,7 +71,7 @@
         <label for="topspeed">Top Speed</label>
         <input type="number" name="topspeed" id="topspeed">
 
-        <label for="image-1">Image</label>
+        <label for="carimages">Image</label>
         <input type="file" name="carimages[]" id="carimages" multiple>
 
         <div class="files">
@@ -81,9 +83,15 @@
 
     
 </section>
+<div id="map"></div>
+
+
 
 <script src="{{ asset("assets/js/add-car.js") }}"></script>
+<script src="{{ asset('assets/js/mapbox.js') }}"></script>
 
+
+</script>
 @endsection
 
 
