@@ -1,11 +1,14 @@
+document.addEventListener("DOMContentLoaded", init);
+
+function init() {
+    document.querySelector("#me-location > button").addEventListener("click", geoFindMe);
+}
+
+
 function geoFindMe() {
 
     function success(position) {
-        const latitude = position.coords.latitude;
-        const longitude = position.coords.longitude;
-
-        console.log(latitude);
-        console.log(longitude);
+        const { latitude, longitude } = position.coords;
         const locations = addLocation([longitude, latitude]).then(data => loadMap(data));
     }
 
@@ -31,6 +34,7 @@ function geoFindMe() {
             {
                 "description": "Tesla seller here!",
                 "coordinates": features[0].center,
+                "location": features[0].place_name
             }
         ]
     }
@@ -42,9 +46,10 @@ async function loadMap(locations) {
     mapboxgl.accessToken =
         'pk.eyJ1Ijoienh0b3giLCJhIjoiY2swMml0cGZhMDB5YjNncG5id2pnaXo2aiJ9.hL4bWTb9dgvSVe1nsKBmgA';
 
-    var map = new mapboxgl.Map({
+
+    const map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/zxtox/ck02iwdqz0dhp1cmu01b7wvxe',
+        style: 'mapbox://styles/zxtox/ckwhvronz6a2r14ocbd8fbypm',
         scrollZoom: true
     });
 
@@ -84,6 +89,8 @@ async function loadMap(locations) {
         }
     });
 
+    document.querySelector("#map").dataset.coords = JSON.stringify(locations[0].coordinates);
+    document.querySelector("#me-location > p").innerText = locations[0].location;
 }
 
 

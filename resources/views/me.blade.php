@@ -1,7 +1,9 @@
 @extends("layouts/master")
 
 @section('head')
-    <title>Tesell | {{ explode(" ",Auth::user() -> name)[0] }}'s profile</title>
+    <title>Tesell | {{ explode(" ", Auth::user() -> name)[0] }}'s profile</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
 @endsection
 
 @section("content")
@@ -33,7 +35,7 @@
 
     <div class="profile-tab">
         <a data-form="me-credentials" href="#">Profile</a>
-        <a data-form="me-password" href="#">Password</a>
+        <a data-form="me-location" href="#">Change location</a>
         <a data-form="me-photo" href="#">Photo Profile</a>
     </div>
 
@@ -63,26 +65,23 @@
         <input class="btn-primary" type="submit" value="Save Changes">
     </form>
 
-    <form id="me-password" class="hidden" method="POST" action="{{ route("updateMe") }}">
+    <form id="me-location" class="hidden" method="POST" action="{{ route("updateMe") }}">
         @csrf
 
-        <label for="password_old">Old Password</label>
-        <input type="password" name="password_old" id="password_old" required>
+        <button type="button" class="btn btn-secondary">Get My Location</button>
+        <p>No location...</p>
+        <div id="map"></div>
 
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" required>
 
-        <label for="password_confirmation">Confirm Password</label>
-        <input type="password" name="password_confirmation" id="password_confirmation" required>
-
-        <input class="btn-primary" type="submit" value="Apply Password">
+        <input class="btn-primary" type="submit" value="Apply my location">
     </form>
 
 </section>
 
 
-<script src="{{ asset("/assets/js/alert.js") }}"></script>
 <script src="{{ asset("/assets/js/me.js") }}"></script>
+<script src="{{ asset("assets/js/mapbox.js") }}"></script>
+
 
 @if(session()->has('message'))
     <script type="text/javascript">
