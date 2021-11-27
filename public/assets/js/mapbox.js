@@ -1,10 +1,3 @@
-document.addEventListener("DOMContentLoaded", init);
-
-function init() {
-    document.querySelector("#me-location > button").addEventListener("click", geoFindMe);
-}
-
-
 function geoFindMe() {
 
     function success(position) {

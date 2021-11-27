@@ -2,8 +2,7 @@
 
 @section('head')
     <title>Tesell | {{ explode(" ", Auth::user() -> name)[0] }}'s profile</title>
-    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+    @include("layouts.mapboxCDN")
 @endsection
 
 @section("content")
@@ -81,8 +80,8 @@
 
 
 <script src="{{ asset("assets/js/alert.js") }}"></script>
-<script src="{{ asset("/assets/js/me.js") }}"></script>
 <script src="{{ asset("assets/js/mapbox.js") }}"></script>
+<script src="{{ asset("/assets/js/me.js") }}"></script>
 
 
 @if(session()->has('message'))

@@ -2,6 +2,7 @@
 
 @section('head')
     <title>Tesell | {{ $car -> year}} {{ $car -> modelName }}</title>
+    @include("layouts.mapboxCDN")
 @endsection
 
 @section("content")
@@ -102,11 +103,27 @@
 
 
           <button class="btn-primary">Contact Seller</button>
+
+
+
+          <div id="map"></div>
     </section>
 
 
 </div>
 
-
+<script src="{{ asset("assets/js/mapbox.js") }}"></script>
 <script src="{{ asset("assets/js/car.js") }}"></script>
+
+<script>
+    const locations = [
+            {
+                "description": "{{ Auth::user() -> name }}",
+                "coordinates": JSON.parse("{{ Auth::user() -> location }}"),
+                "location": "Test"
+            }
+        ]
+
+    loadMap(locations);
+</script>
 @endsection

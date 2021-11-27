@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", init);
 
+
 function init() {
     document.querySelectorAll(".profile-tab>a").forEach(a => a.addEventListener("click", openNewForm));
     document.querySelector("#file").addEventListener("change", showImg);
+    document.querySelector("#me-location > button").addEventListener("click", geoFindMe);
 
 
     function openNewForm(e) {
@@ -15,8 +17,8 @@ function init() {
     function showImg(e) {
         e.preventDefault();
         const { files: listOfFiles } = e.target;
-        const [ files ] = listOfFiles;
-        if(files.type.match('image.*')) {
+        const [files] = listOfFiles;
+        if (files.type.match('image.*')) {
             const reader = new FileReader();
             reader.addEventListener('load', event => {
                 document.querySelector("#me-photo>figure>img").src = event.target.result;
