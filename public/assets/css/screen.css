@@ -396,6 +396,8 @@ header nav > ul li:hover {
 .credentials__form span {
   color: #999;
   display: block;
+  margin-bottom: 4%;
+  text-align: center;
 }
 .credentials__form span::before {
   content: " ";
