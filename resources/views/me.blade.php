@@ -67,8 +67,14 @@
     <form id="me-location" class="hidden" method="POST" action="{{ route("saveLocation") }}">
         @csrf
 
-        <button type="button" class="btn btn-secondary">Get My Location</button>
-        <p>{{ Auth::user() -> location }}</p>
+        @if(!is_null(Auth::user() -> location))
+            <p>{{ Auth::user() -> location }}</p>
+            
+        @else
+            <button type="button" class="btn btn-secondary">Get My Location</button>
+        @endif
+        
+        
         <div id="map"></div>
         <input type="hidden" name="coords" id="coords" />
 
@@ -79,9 +85,28 @@
 </section>
 
 
-<script src="{{ asset("assets/js/alert.js") }}"></script>
 <script src="{{ asset("assets/js/mapbox.js") }}"></script>
+
+<script>
+    const locations = [
+            {
+                "description": "{{ Auth::user() -> name }}",
+                "coordinates": JSON.parse("{{ Auth::user() -> location }}"),
+                "location": "Test"
+            }
+        ];
+
+    loadMap(locations);
+</script>
+
+
+<script src="{{ asset("assets/js/alert.js") }}"></script>
 <script src="{{ asset("/assets/js/me.js") }}"></script>
+
+
+
+
+
 
 
 @if(session()->has('message'))

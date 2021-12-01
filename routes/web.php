@@ -29,12 +29,12 @@ Route::group(["prefix" => "me"], function() {
     Route::post('/location', [UserController::class, "saveLocationUser"])->middleware("auth")->middleware("auth")->name("saveLocation");
 });
 
-Route::post('/uploadMe', [UserController::class, "uploadMe"])->name("uploadMe")->middleware("auth");
-Route::get('/myoffers', [CarController::class, "showMyOffers"])->name("myoffers")->middleware("auth");
+Route::post('/uploadMe', [UserController::class, "uploadMe"])->middleware("auth")->name("uploadMe");
+Route::get('/myoffers', [CarController::class, "showMyOffers"])->middleware("auth")->name("myoffers");
 
 Route::group(["prefix" => "addoffer"], function() {
-    Route::get('/', [CarController::class, "showAddCarForm"])->name("addCarForm");
-    Route::post('/', [CarController::class, "addCar"])->name("addCar");
+    Route::get('/', [CarController::class, "showAddCarForm"])->middleware("auth")->name("addCarForm");
+    Route::post('/', [CarController::class, "addCar"])->middleware("auth")->name("addCar");
 });
 
 

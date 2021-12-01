@@ -4,7 +4,11 @@ document.addEventListener("DOMContentLoaded", init);
 function init() {
     document.querySelectorAll(".profile-tab>a").forEach(a => a.addEventListener("click", openNewForm));
     document.querySelector("#file").addEventListener("change", showImg);
-    document.querySelector("#me-location > button").addEventListener("click", geoFindMe);
+
+    const $getLocationButtonEl = document.querySelector("#me-location > button");
+    if ($getLocationButtonEl) {
+        $getLocationButtonEl.addEventListener("click", geoFindMe);
+    }
 
 
     function openNewForm(e) {

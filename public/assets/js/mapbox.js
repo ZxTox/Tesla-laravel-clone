@@ -13,7 +13,7 @@ function geoFindMe() {
         console.log('Geolocation is not supported by your browser');
     } else {
         console.log('Locating…');
-        navigator.geolocation.getCurrentPosition(success, error);
+        navigator.geolocation.getCurrentPosition(success, error, { enableHighAccuracy: true });
     }
 
     async function fetchLocation(location) {
@@ -36,54 +36,44 @@ function geoFindMe() {
 
 
 async function loadMap(locations) {
+    console.log(locations);
+
+    const [loc] = locations;
     mapboxgl.accessToken =
         'pk.eyJ1Ijoienh0b3giLCJhIjoiY2swMml0cGZhMDB5YjNncG5id2pnaXo2aiJ9.hL4bWTb9dgvSVe1nsKBmgA';
+
 
 
     const map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/zxtox/ckwhvronz6a2r14ocbd8fbypm',
-        scrollZoom: true
+        center: loc.coordinates,
+        scrollZoom: true,
+        zoom: 14
     });
 
     map.addControl(new mapboxgl.NavigationControl());
-    const bounds = new mapboxgl.LngLatBounds();
 
-    locations.forEach(loc => {
-        // Add marker
-        const el = document.createElement('div');
-        el.className = 'marker';
-        // Add marker
-        new mapboxgl.Marker({
-            element: el,
-            anchor: 'bottom'
-        })
-            .setLngLat(loc.coordinates)
-            .addTo(map);
+    const el = document.createElement('div');
+    el.className = 'marker';
+    // Add marker
+    new mapboxgl.Marker({
+        element: el,
+        anchor: 'bottom'
+    })
+        .setLngLat(loc.coordinates)
+        .addTo(map);
 
-        // app popup
-        new mapboxgl.Popup({
-            offset: 30
-        })
-            .setLngLat(loc.coordinates)
-            .setHTML(`<p>${loc.description}</p>`)
-            .addTo(map);
 
-        // extend map bound to include current lcoation
-        bounds.extend(loc.coordinates);
-    });
 
-    map.fitBounds(bounds, {
-        padding: {
-            top: 200,
-            bottom: 150,
-            left: 100,
-            right: 100
-        }
-    });
+    new mapboxgl.Popup({
+        offset: 30
+    })
+        .setLngLat(loc.coordinates)
+        .setHTML(`<p>${loc.description}</p>`)
+        .addTo(map);
 
-    document.querySelector("#coords").value = JSON.stringify(locations[0].coordinates);
-    document.querySelector("#me-location > p").innerText = locations[0].location;
+
 }
 
 

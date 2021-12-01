@@ -79,8 +79,6 @@
 <script src="{{ asset("assets/js/add-car.js") }}"></script>
 <script src="{{ asset('assets/js/mapbox.js') }}"></script>
 
-
-</script>
 @endsection
 
 
