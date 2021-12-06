@@ -75,7 +75,7 @@
             <li><p>Used Vehicule</p></li>
             <li><p>{{ number_format($car -> odometer) }} km odometer</p></li>
             <li><p>White Color</p></li>
-            <li><p>Located in Zaventem</p></li>
+            <li><p id="place-name">Located in Zaventem</p></li>
         </ul>
 
 
@@ -122,6 +122,6 @@
             }
         ]
 
-    loadMap(locations);
+    loadMapWithAddress(locations, "#place-name");
 </script>
 @endsection

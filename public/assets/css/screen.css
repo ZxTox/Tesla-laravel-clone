@@ -700,6 +700,7 @@ form input:not(input[type=submit]):hover, form select:not(input[type=submit]):ho
   display: flex;
   justify-content: center;
   align-items: center;
+  display: none;
 }
 
 #edit-menu {
@@ -708,6 +709,7 @@ form input:not(input[type=submit]):hover, form select:not(input[type=submit]):ho
   width: 70%;
   height: 70%;
   padding: 4%;
+  display: none;
 }
 
 #car-graph {

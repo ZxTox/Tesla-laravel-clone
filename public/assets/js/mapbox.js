@@ -16,10 +16,7 @@ function geoFindMe() {
         navigator.geolocation.getCurrentPosition(success, error, { enableHighAccuracy: true });
     }
 
-    async function fetchLocation(location) {
-        const data = await fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${location}.json?access_token=pk.eyJ1Ijoienh0b3giLCJhIjoiY2swMmlveml4MWxrODNtcHJiamdiNnN1eSJ9.XczK1iJW_x3svwijBbKEZA`);
-        return await data.json();
-    }
+
 
     async function addLocation(location) {
         const { features } = await fetchLocation(location);
@@ -33,7 +30,16 @@ function geoFindMe() {
     }
 }
 
+async function fetchLocation(location) {
+    const data = await fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${location}.json?access_token=pk.eyJ1Ijoienh0b3giLCJhIjoiY2swMmlveml4MWxrODNtcHJiamdiNnN1eSJ9.XczK1iJW_x3svwijBbKEZA`);
+    return await data.json();
+}
 
+async function loadMapWithAddress(location, textSelector) {
+    const { features } = await fetchLocation(location[0].coordinates);
+    document.querySelector(textSelector).innerText = `Located at: ${features[0].place_name}`;
+    loadMap(location);
+}
 
 async function loadMap(locations) {
     console.log(locations);
