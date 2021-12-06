@@ -1,6 +1,34 @@
-<header>
+<div class="menu-overlay">
+    <section id="menu">
+        <a class="close" href="#">
+            <i class="far fa-times-circle"></i>
+        </a>
 
-    <a href="{{ route("index") }}">
+        <ul>
+            <li><a href="#">Model S</a></li>
+            <li><a href="#">Model 3</a></li>
+            <li><a href="#">Model X</a></li>
+            <li><a href="#">Model Y</a></li>
+
+
+            @auth
+                <li><a href="{{ route("me") }}">Account Settings</a></li>
+
+                <li><a href="{{ route("addCarForm") }}">Add car</a></li>
+                <li><a href="{{ route("myoffers") }}">My car offers</a></li>
+            @endauth
+
+            @guest
+                <li><a href="{{ route("auth") }}">Authenticate</a></li>
+            @endguest
+            
+            <li><a href=" {{ route("cars") }} ">Shop Cars</a></li>
+            <li><a href="#">About Us</a></li>
+        </ul>
+    </section>
+</div>
+
+<header>
     <h1>
         <svg
             class="tds-icon tds-icon-logo-wordmark tds-site-logo-icon"
@@ -14,7 +42,24 @@
             ></path>
         </svg>
     </h1>
-</a>
+
+    <nav>
+        <ul>
+            <li data-left="0" data-model="s"><a href="#">Model S</a></li>
+            <li data-left="25" data-model="3"><a href="#">Model 3</a></li>
+            <li data-left="50" data-model="x"><a href="#">Model X</a></li>
+            <li data-left="75" data-model="y"><a href="#">Model Y</a></li>
+        </ul>
+        <span id="hover-sliding"></span>
+    </nav>
+
+    <nav>
+        <ul>
+            <li><a href=" {{ route("cars") }} ">Shop</a></li>
+            <li><a href="{{ route("auth") }}">Auth</a></li>
+            <li class="menu-btn__popup"><a href="#">Menu</a></li>
+        </ul>
+    </nav>
 
     <a class="menu-btn__popup" id="hamburger" href="#">Menu</a>
 </header>

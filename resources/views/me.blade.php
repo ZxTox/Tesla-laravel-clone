@@ -6,10 +6,6 @@
 @endsection
 
 @section("content")
-
-
-
-
 @include("layouts.header")
 
 

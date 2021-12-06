@@ -9,8 +9,9 @@
 	@yield("head")
 </head>
 	<body>
-
         @yield("content")
 		
+
+		<script src="{{ asset('/assets/js/main.js') }}"></script>
 	</body>
 </html>

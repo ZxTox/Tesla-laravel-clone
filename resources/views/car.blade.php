@@ -11,8 +11,6 @@
 
     <section id="car-media">
 
-        @include("layouts.header")
-
         <div class="car-images">
             <a class="img-arrows invinsible" href="#" data-type="0">
                 <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">

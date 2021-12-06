@@ -7,7 +7,7 @@
 @section("content")
 
 
-@extends("layouts.header")
+@include("layouts.header")
 
 
 <div id="container">
