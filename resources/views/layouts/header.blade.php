@@ -1,7 +1,10 @@
 <div class="menu-overlay">
     <section id="menu">
         <a class="close" href="#">
-            <i class="far fa-times-circle"></i>
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="20" cy="20" rx="20" ry="20" transform="rotate(-180 20 20)" fill="black"/>
+                <path d="M25.59 13L20 18.59L14.41 13L13 14.41L18.59 20L13 25.59L14.41 27L20 21.41L25.59 27L27 25.59L21.41 20L27 14.41L25.59 13Z" fill="white"/>
+            </svg>
         </a>
 
         <ul>

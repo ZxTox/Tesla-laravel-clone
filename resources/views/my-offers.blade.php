@@ -13,6 +13,13 @@
     <section id="edit-menu">
         <form action="#" method="POST">
             <div>
+
+                <select name="offer" id="offer">
+                    @foreach ($offers as $offer)
+                        <option value="{{ $offer -> offerid }}">{{ $offer ->modelName . " "  . $offer -> typeModel }}</option>
+                    @endforeach
+                </select>
+
                 <label for="price">Price</label>
                 <input type="number" name="price" id="price">
 
