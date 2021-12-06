@@ -742,6 +742,12 @@ form {
 	
 }
 
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 
 #edit-menu {
 	background-color: $white;

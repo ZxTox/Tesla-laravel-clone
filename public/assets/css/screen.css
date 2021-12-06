@@ -696,6 +696,12 @@ form input:not(input[type=submit]):hover, form select:not(input[type=submit]):ho
   text-align: center;
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #edit-menu {
   background-color: #fff;
   border-radius: 10px;

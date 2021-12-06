@@ -9,9 +9,28 @@
 
 <div id="container">
 
-    <div class="menu-overlay">
+    <div class="menu-overlay center">
     <section id="edit-menu">
-        
+        <form action="#" method="POST">
+            <div>
+                <label for="price">Price</label>
+                <input type="number" name="price" id="price">
+
+                <label for="odometer">Odometer</label>
+                <input type="text" name="odometer" id="odometer">
+
+                <label for="accel">Acceleration</label>
+                <input type="number" name="accel" id="accel">
+
+                <label for="range">Range</label>
+                <input type="number" name="range" id="range">
+
+                <label for="topspeed">Top Speed</label>
+                <input type="number" name="topspeed" id="topspeed">
+
+                <input class="btn-primary" type="submit" value="Add Car">
+            </div>
+        </form>
     </section>
 </div>
 
