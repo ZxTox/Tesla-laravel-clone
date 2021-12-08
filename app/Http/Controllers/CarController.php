@@ -14,17 +14,16 @@ class CarController extends Controller
 {
 
     function getAllCars(Request $request) {
-
         $modelName = $request->query('model');
-
-
         $offers = Offer::join('users', 'offers.seller', '=', 'users.id')->select('offers.*', 'users.email', 'users.name', 'users.photoUrl');
 
         if(isset($modelName)) {
-            $offers -> where("modelName", $modelName);
+            $offers->where("modelName", $modelName);
         }
 
-        return $offers->paginate(4);
+       
+
+        return $offers -> paginate(2);
     }
 
     function getALlCarsData() {

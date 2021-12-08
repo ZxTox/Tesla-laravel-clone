@@ -15,6 +15,9 @@
         <section id="cars">
            
             <div class="car-inventory">
+                @if (count($cars) < 1)
+                    <h2>No car found</h2>
+                @endif
 
                 @foreach ($cars as $car)
                 <div class="car">

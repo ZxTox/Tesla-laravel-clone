@@ -302,7 +302,12 @@ header nav > ul li:hover {
   gap: 1rem;
 }
 
+.center {
+  text-align: center;
+}
+
 #cars {
+  margin-top: 4%;
   background-color: #f4f4f4;
   padding: 2.2rem;
 }

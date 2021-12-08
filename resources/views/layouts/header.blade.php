@@ -8,10 +8,10 @@
         </a>
 
         <ul>
-            <li><a href="#">Model S</a></li>
-            <li><a href="#">Model 3</a></li>
-            <li><a href="#">Model X</a></li>
-            <li><a href="#">Model Y</a></li>
+            <li><a href="{{ route("cars") }}?model=Model S">Model S</a></li>
+            <li><a href="{{ route("cars") }}?model=Model 3">Model 3</a></li>
+            <li><a href="{{ route("cars") }}?model=Model X">Model X</a></li>
+            <li><a href="{{ route("cars") }}?model=Model Y">Model Y</a></li>
 
 
             @auth
@@ -50,17 +50,17 @@
 
     <nav>
         <ul>
-            <li data-left="0" data-model="s"><a href="#">Model S</a></li>
-            <li data-left="25" data-model="3"><a href="#">Model 3</a></li>
-            <li data-left="50" data-model="x"><a href="#">Model X</a></li>
-            <li data-left="75" data-model="y"><a href="#">Model Y</a></li>
+            <li data-left="0" data-model="s"><a href="{{ route("cars") }}?model=Model S">Model S</a></li>
+            <li data-left="25" data-model="3"><a href="{{ route("cars") }}?model=Model 3">Model 3</a></li>
+            <li data-left="50" data-model="x"><a href="{{ route("cars") }}?model=Model X">Model X</a></li>
+            <li data-left="75" data-model="y"><a href="{{ route("cars") }}?model=Model Y">Model Y</a></li>
         </ul>
         <span id="hover-sliding"></span>
     </nav>
 
     <nav>
         <ul>
-            <li><a href=" {{ route("cars") }} ">Shop</a></li>
+            <li><a href="{{ route("cars") }}">Shop</a></li>
             <li><a href="{{ route("auth") }}">Auth</a></li>
             <li class="menu-btn__popup"><a href="#">Menu</a></li>
         </ul>
