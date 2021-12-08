@@ -9,7 +9,7 @@ function init() {
     document.querySelector("#car-information").addEventListener("scroll", removeScrollArrow);
     document.addEventListener("keydown", (e) => {
 
-        switch(e.key) {
+        switch (e.key) {
             case "Enter":
                 toggleFullScreen();
                 break;
@@ -21,13 +21,13 @@ function init() {
                 break;
         }
 
-      }, false);
-    
+    }, false);
+
     function removeScrollArrow(e) {
         e.preventDefault();
         const $el = document.querySelector("#car-information");
         document.querySelector("#car-information>div").style.opacity = 0;
-        if($el.scrollTop <= 10) {
+        if ($el.scrollTop <= 10) {
             document.querySelector("#car-information>div").style.opacity = 1;
         }
     }
@@ -42,12 +42,12 @@ function init() {
         if (!document.fullscreenElement) {
             document.querySelector("#car-media").requestFullscreen();
         } else {
-          if (document.exitFullscreen) {
-            document.exitFullscreen();
-          }
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            }
         }
-      }
-      
+    }
+
 
 
     function changeImg(e, typeKey = "") {
@@ -59,10 +59,10 @@ function init() {
 
         if (typeNumber === 0) {
             currentIndex++;
-        }else {
-            if(currentIndex > 0) {
+        } else {
+            if (currentIndex > 0) {
                 currentIndex--;
-            }else {
+            } else {
                 currentIndex = imagesArray.length;
             }
         }

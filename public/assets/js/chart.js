@@ -14,6 +14,7 @@ async function init() {
 
   async function loadCharts() {
     const data = await getData();
+    console.log(data);
     addDataToChart(data);
     averagePricePerModel(data);
   }

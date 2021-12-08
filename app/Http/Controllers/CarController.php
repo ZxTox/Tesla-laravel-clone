@@ -13,10 +13,22 @@ use Illuminate\Support\Facades\Auth;
 class CarController extends Controller
 {
 
-    function getAllCars() {
-        $offers = Offer::join('users', 'offers.seller', '=', 'users.id')->select('offers.*', 'users.email', 'users.name', 'users.photoUrl')->get();
+    function getAllCars(Request $request) {
 
-        return $offers;
+        $modelName = $request->query('model');
+
+
+        $offers = Offer::join('users', 'offers.seller', '=', 'users.id')->select('offers.*', 'users.email', 'users.name', 'users.photoUrl');
+
+        if(isset($modelName)) {
+            $offers -> where("modelName", $modelName);
+        }
+
+        return $offers->paginate(4);
+    }
+
+    function getALlCarsData() {
+        return Offer::join('users', 'offers.seller', '=', 'users.id')->select('offers.*', 'users.email', 'users.name', 'users.photoUrl')->get();
     }
 
     function showCar(Request $request, $car) {

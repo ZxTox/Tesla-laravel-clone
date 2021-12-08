@@ -21,5 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::group(["prefix" => "cars"], function() {
-    Route::get("/", [CarController::class, 'getAllCars']);
+    Route::get("/", [CarController::class, 'getALlCarsData']);
 });

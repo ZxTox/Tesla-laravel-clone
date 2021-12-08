@@ -33,6 +33,7 @@
 
 <header>
     <h1>
+        <a href="{{ route("index") }}">
         <svg
             class="tds-icon tds-icon-logo-wordmark tds-site-logo-icon"
             viewBox="0 0 342 35"
@@ -44,6 +45,7 @@
                 fill="var(--tds-icon--fill, #171a20)"
             ></path>
         </svg>
+        </a>
     </h1>
 
     <nav>

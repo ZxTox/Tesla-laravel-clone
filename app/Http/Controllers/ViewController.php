@@ -10,10 +10,10 @@ class ViewController extends Controller
         return view('index');
     }
 
-    function showCars() {
+    function showCars(Request $request) {
         $carController = new CarController();
 
-        return view('cars', ["cars" => $carController -> getAllCars()]);
+        return view('cars', ["cars" => $carController -> getAllCars($request)]);
     }
 
     function showAuth() {
