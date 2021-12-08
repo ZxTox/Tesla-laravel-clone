@@ -13,10 +13,10 @@ use Illuminate\Support\Facades\Auth;
 class CarController extends Controller
 {
 
-    function getAllCars(Request $request) {
+    function getAllCars() {
         $offers = Offer::join('users', 'offers.seller', '=', 'users.id')->select('offers.*', 'users.email', 'users.name', 'users.photoUrl')->get();
 
-        return response()->json($offers, 200);
+        return $offers;
     }
 
     function showCar(Request $request, $car) {

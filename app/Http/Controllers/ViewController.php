@@ -11,7 +11,9 @@ class ViewController extends Controller
     }
 
     function showCars() {
-        return view('cars');
+        $carController = new CarController();
+
+        return view('cars', ["cars" => $carController -> getAllCars()]);
     }
 
     function showAuth() {
