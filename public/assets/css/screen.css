@@ -302,8 +302,16 @@ header nav > ul li:hover {
   gap: 1rem;
 }
 
-.center {
+.text-center {
   text-align: center;
+}
+.text-center > p {
+  margin-top: 1%;
+  font-size: 1.2rem;
+}
+.text-center > p > a {
+  text-decoration: underline;
+  color: #e82127;
 }
 
 #cars {

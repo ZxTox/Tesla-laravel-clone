@@ -13,11 +13,15 @@
 <div id="container">
     <main>
         <section id="cars">
-           
-            <div class="car-inventory">
-                @if (count($cars) < 1)
+
+            @if (count($cars) < 1)
+                <div class="text-center">
                     <h2>No car found</h2>
+                    <p>Please search for <a href="{{ route("cars") }}">all cars</a></p>
+                </div>
                 @endif
+            <div class="car-inventory">
+                
 
                 @foreach ($cars as $car)
                 <div class="car">
