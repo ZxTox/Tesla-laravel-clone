@@ -1,11 +1,12 @@
 const API_USERS_ENDPOINT = '/api/users';
-const CANVAS_SELECTOR = 'canvas'
+const USERS_CHART_SELECTOR = '#users-chart'
 
 document.addEventListener('DOMContentLoaded', init);
 
 async function init() {
 
-    barChart();
+    // Bar chart user account creation by date
+    usersChart();
 }
 
 
@@ -15,8 +16,8 @@ async function getUsers() {
 }
 
 
-async function barChart() {
-    const ctx = document.querySelector(CANVAS_SELECTOR).getContext('2d');
+async function usersChart() {
+    const ctx = document.querySelector(USERS_CHART_SELECTOR).getContext('2d');
     const data = await getUsers();
 
     const dataFreq = data.map(el => new Date(el.created_at).toLocaleDateString()).reduce((acc, curr) => {
@@ -24,17 +25,25 @@ async function barChart() {
     }, {});
 
 
+    const fakeData = {
+        "2021-12-10": 90,
+        "2021-12-11": 40,
+        "2021-12-12": 70,
+        "2021-12-13": 20,
+    }
+
+
     const configuration = {
         type: 'bar',
         data: {
             datasets: [
                 {
-                    data: dataFreq,
+                    data: fakeData,
                 },
             ],
         },
         options: {
-            backgroundColor: [...Array(Object.keys(dataFreq).length)].map(() => '#' + Math.floor(Math.random() * 16777215).toString(16)),
+            backgroundColor: [...Array(Object.keys(fakeData).length)].map(() => `#${Math.floor(Math.random() * 16777215).toString(16)}`),
             plugins: {
                 title: {
                     display: true,

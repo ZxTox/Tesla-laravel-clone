@@ -816,6 +816,11 @@ form {
 	h2 {
 		font-weight: bold;
 	}
+
+	div {
+		box-shadow: $box-shadow;
+	}
+	
 }
 
 @media screen and (max-width: 50em) {

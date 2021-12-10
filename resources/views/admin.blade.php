@@ -13,7 +13,7 @@
 
 
     <div>
-        <canvas></canvas>
+        <canvas id="users-chart"></canvas>
     </div>
 </section>
 
