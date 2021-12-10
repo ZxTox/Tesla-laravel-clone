@@ -20,7 +20,7 @@ class EnsureIsAdmin
     {
 
         if (Auth::user() -> role != "admin") {
-            return redirect(RouteServiceProvider::HOME);
+            return redirect()->back();
         }
 
 
