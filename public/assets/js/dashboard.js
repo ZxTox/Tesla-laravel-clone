@@ -18,13 +18,10 @@ async function getUsers() {
 async function barChart() {
     const ctx = document.querySelector(CANVAS_SELECTOR).getContext('2d');
     const data = await getUsers();
-    console.log(data);
-
 
     const dataFreq = data.map(el => new Date(el.created_at).toLocaleDateString()).reduce((acc, curr) => {
         return acc[curr] ? ++acc[curr] : acc[curr] = 1, acc
     }, {});
-    console.log(dataFreq);
 
 
     const configuration = {
@@ -32,16 +29,16 @@ async function barChart() {
         data: {
             datasets: [
                 {
-                    data: data,
+                    data: dataFreq,
                 },
             ],
         },
         options: {
-            backgroundColor: '#9C27B0',
+            backgroundColor: [...Array(Object.keys(dataFreq).length)].map(() => '#' + Math.floor(Math.random() * 16777215).toString(16)),
             plugins: {
                 title: {
                     display: true,
-                    text: 'Vaccinated population by region',
+                    text: 'Creation of user account by day',
                 },
                 legend: {
                     display: false,
@@ -51,16 +48,19 @@ async function barChart() {
                 x: {
                     title: {
                         display: true,
-                        text: 'regions',
+                        text: 'Dates',
                         font: {
                             weight: 'bold',
                         },
                     },
                 },
                 y: {
+                    ticks: {
+                        precision: 0
+                    },
                     title: {
                         display: true,
-                        text: 'vaccinated (%)',
+                        text: 'Amount of users',
                         font: {
                             weight: 'bold',
                         },
