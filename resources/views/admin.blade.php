@@ -10,18 +10,19 @@
 
 <section id="admin-dashboard">
     <h2>Admin dashboard</h2>
+
+
+    <div>
+        <canvas></canvas>
+    </div>
 </section>
 
 
 
 
 
-<script src="{{ asset("assets/js/alert.js") }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{{ asset("assets/js/dashboard.js") }}"></script>
 
 
-@if(session()->has('message'))
-    <script type="text/javascript">
-        animateAlert("{{session()->get('message')}}");
-    </script>
-@endif
 @endsection

@@ -760,6 +760,14 @@ form input:not(input[type=submit]):hover, form select:not(input[type=submit]):ho
   margin-top: 4%;
 }
 
+#admin-dashboard {
+  width: 90%;
+  margin: 4% auto;
+}
+#admin-dashboard h2 {
+  font-weight: bold;
+}
+
 @media screen and (max-width: 50em) {
   #cars .car-inventory {
     grid-template-columns: 1fr;

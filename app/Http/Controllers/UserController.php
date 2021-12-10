@@ -30,6 +30,12 @@ class UserController extends Controller
         return redirect()->back()->with("message", "Location successfully updated!");
     }
 
+    function getAllUsers(Request $request) {
+        $users = User::all();
+
+        return response()->json($users);
+    }
+
     function saveUser($data) {
         $user = User::find(Auth::user() -> id);
 

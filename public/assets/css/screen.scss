@@ -810,6 +810,14 @@ form {
 	margin-top: 4%;
 }
 
+#admin-dashboard {
+	width: 90%;
+	margin: 4% auto;
+	h2 {
+		font-weight: bold;
+	}
+}
+
 @media screen and (max-width: 50em) {
 	#cars {
 		.car-inventory {
