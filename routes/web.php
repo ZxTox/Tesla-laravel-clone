@@ -37,6 +37,7 @@ Route::group(["prefix" => "addoffer"], function() {
     Route::post('/', [CarController::class, "addCar"])->middleware("auth")->name("addCar");
 });
 
+Route::get('/admin', [ViewController::class, "showAdmin"])->middleware("isAdmin")->name("admin");
 
 
 Route::get('/auth', [ViewController::class, "showAuth"])->middleware("guest")->name("auth"); 
