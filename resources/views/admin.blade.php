@@ -15,6 +15,10 @@
     <div>
         <canvas id="users-chart"></canvas>
     </div>
+
+    <div>
+        <canvas id="amount-of-cars-chart"></canvas>
+    </div>
 </section>
 
 

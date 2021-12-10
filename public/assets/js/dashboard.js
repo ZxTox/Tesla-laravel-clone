@@ -1,24 +1,32 @@
 const API_USERS_ENDPOINT = '/api/users';
 const USERS_CHART_SELECTOR = '#users-chart'
 
+const API_AMOUNT_OF_CARS_PER_USER = '/api/mostoffers';
+const USERS_MOST_CARS_SELECTOR = '#amount-of-cars-chart';
+
+const generateRandomColors = (length) => [...Array(length)].map(() => `#${Math.floor(Math.random() * 16777215).toString(16)}`);
+
 document.addEventListener('DOMContentLoaded', init);
 
 async function init() {
 
     // Bar chart user account creation by date
     usersChart();
+
+    // Amount of cars sold
+    amountOfCars();
 }
 
 
-async function getUsers() {
-    const data = await fetch(API_USERS_ENDPOINT);
+async function fetchData(url) {
+    const data = await fetch(url);
     return await data.json();
 }
 
 
 async function usersChart() {
     const ctx = document.querySelector(USERS_CHART_SELECTOR).getContext('2d');
-    const data = await getUsers();
+    const data = await fetchData(API_USERS_ENDPOINT);
 
     const dataFreq = data.map(el => new Date(el.created_at).toLocaleDateString()).reduce((acc, curr) => {
         return acc[curr] ? ++acc[curr] : acc[curr] = 1, acc
@@ -43,7 +51,7 @@ async function usersChart() {
             ],
         },
         options: {
-            backgroundColor: [...Array(Object.keys(fakeData).length)].map(() => `#${Math.floor(Math.random() * 16777215).toString(16)}`),
+            backgroundColor: generateRandomColors(Object.keys(fakeData).length),
             plugins: {
                 title: {
                     display: true,
@@ -82,6 +90,40 @@ async function usersChart() {
     new Chart(ctx, configuration);
 }
 
+
+async function amountOfCars() {
+    const ctx = document.querySelector(USERS_MOST_CARS_SELECTOR).getContext('2d');
+    const data = await fetchData(API_AMOUNT_OF_CARS_PER_USER);
+
+
+    const dataFreq = Object.assign({}, ...(data.map(seller => ({ [seller.name]: `${seller.amountOfCars}` }))));
+
+
+    const configuration = {
+        type: 'doughnut',
+        data: {
+            labels: Object.keys(dataFreq),
+            datasets: [
+                {
+                    data: Object.values(dataFreq),
+                    backgroundColor: generateRandomColors(Object.keys(dataFreq).length),
+                },
+            ],
+        },
+        options: {
+            plugins: {
+                title: {
+                    display: true,
+                    text: "User with most cars on Tesell",
+                    font: {
+                        size: 24,
+                    },
+                },
+            },
+        },
+    };
+    new Chart(ctx, configuration);
+}
 
 
 

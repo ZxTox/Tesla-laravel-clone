@@ -38,12 +38,6 @@ class UserController extends Controller
     }
 
     function usersWithMostCars(Request $request) {
-        // select users.name, count(*) as amountOfCars
-        // from offers
-        // join users
-        // on offers.seller = users.id
-        // group by users.id;
-
         $users = Offer::select('users.name',Offer::raw('count(*) as amountOfCars'))->join('users','offers.seller','=','users.id')->groupBy('users.name')->get();
         return response()->json($users);
     }

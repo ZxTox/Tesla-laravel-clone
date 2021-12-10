@@ -14,7 +14,6 @@ async function init() {
 
   async function loadCharts() {
     const data = await getData();
-    console.log(data);
     addDataToChart(data);
     averagePricePerModel(data);
   }
@@ -25,6 +24,7 @@ async function init() {
       return acc[curr] ? ++acc[curr] : acc[curr] = 1, acc
     }, {});
 
+    console.log(carFrequencies);
 
     const ctx = document.querySelector(CANVAS_SELECTOR).getContext('2d');
     generateChart(ctx, carFrequencies, 'Tesell stats');
