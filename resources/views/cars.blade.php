@@ -66,6 +66,7 @@
                 </div>
                 @endforeach
 
+
                 @if ($cars->hasPages())
                     <div class="pagination-wrapper">
                         {{ $cars->links() }}
