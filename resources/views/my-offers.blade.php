@@ -50,7 +50,7 @@
 
                 <h3>{{ $offer -> modelName }}</h3>
                 <h4>{{ $offer -> typeModel }}</h4>
-                <p>{{ $offer -> price }}</p>
+                <p>€{{ number_format($offer -> price ,2,",","."); }}</p>
                 <div>
                     <a href="{{ route("car", $offer -> offerid) }}">
                         <button class="btn-secondary">

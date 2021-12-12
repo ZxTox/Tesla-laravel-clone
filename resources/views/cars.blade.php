@@ -25,13 +25,15 @@
 
                 @foreach ($cars as $car)
                 <div class="car">
-                    <a href="/cars/${currentCar.offerid}">
+                    <a href="{{ route("car", $car -> offerid) }}">
                         <h3>{{ $car -> year }} {{ $car -> modelName }}</h3>
                     </a>
                         <h4>{{ $car -> typeModel }}</h4>
                     <h5>€{{ number_format($car -> price, 2) }}</h5>
+
                     <img
                         src="{{ json_decode($car -> images)[0] }}"
+                        data-images="{{ join(" ", json_decode($car -> images))  }}"
                         alt="picture of a {{ $car -> modelName }}"
                     />
             

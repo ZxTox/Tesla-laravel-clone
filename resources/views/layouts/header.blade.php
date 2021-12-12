@@ -28,9 +28,14 @@
             <li><a href=" {{ route("cars") }} ">Shop Cars</a></li>
             <li><a href="#">About Us</a></li>
 
-            @if (Auth::user() -> role == "admin")
+
+
+            @auth
+                @if (Auth::user() -> role == "admin")
                 <li><a href="{{ route('admin') }}">Admin dashboard</a></li>
-            @endif
+                @endif
+            @endauth
+            
         </ul>
     </section>
 </div>
