@@ -75,13 +75,20 @@
         <input type="hidden" name="coords" id="coords" />
 
 
+        @if(is_null(Auth::user() -> location))
         <input class="btn-primary" type="submit" value="Apply my location">
+        @endif
     </form>
 
 </section>
 
 
 <script src="{{ asset("assets/js/mapbox.js") }}"></script>
+
+
+
+<script src="{{ asset("assets/js/alert.js") }}"></script>
+<script src="{{ asset("/assets/js/me.js") }}"></script>
 
 <script>
     const locations = [
@@ -92,14 +99,10 @@
             }
         ];
 
-    loadMap(locations);
+    loadMapWithAddress(locations, "#me-location > p");
 </script>
 
-
-<script src="{{ asset("assets/js/alert.js") }}"></script>
-<script src="{{ asset("/assets/js/me.js") }}"></script>
-
-
+</script>
 
 
 

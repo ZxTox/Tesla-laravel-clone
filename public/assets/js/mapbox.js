@@ -42,7 +42,7 @@ async function loadMapWithAddress(location, textSelector) {
 }
 
 async function loadMap(locations) {
-    console.log(locations);
+    //console.log(locations);
 
     const [loc] = locations;
     mapboxgl.accessToken =
@@ -79,7 +79,9 @@ async function loadMap(locations) {
         .setHTML(`<p>${loc.description}</p>`)
         .addTo(map);
 
+    if (document.querySelector("#coords")) document.querySelector("#coords").value = JSON.stringify(locations[0].coordinates);
 
+    if (document.querySelector("#car-information")) document.querySelector("#car-information").scrollTop = 0;
 }
 
 

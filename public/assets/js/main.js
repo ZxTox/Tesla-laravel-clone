@@ -6,6 +6,7 @@ const OPEN_MENU_SELECTOR = '.menu-btn__popup';
 const CSS_VAR_SLIDING_NAV = '--navbar-sliding-left';
 
 function init() {
+	if (!document.querySelector(CLOSE_MENU_SELECTOR)) return;
 	document
 		.querySelector(CLOSE_MENU_SELECTOR)
 		.addEventListener('click', closePopUp);

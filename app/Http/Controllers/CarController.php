@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Auth;
 class CarController extends Controller
 {
 
+    const paginationAmount = 4;
+
     function getAllCars(Request $request) {
         $modelName = $request->query('model');
         $offers = Offer::join('users', 'offers.seller', '=', 'users.id')->select('offers.*', 'users.email', 'users.name', 'users.photoUrl');
@@ -23,7 +25,7 @@ class CarController extends Controller
 
        
 
-        return $offers -> paginate(2);
+        return $offers -> paginate(CarController::paginationAmount);
     }
 
     function getALlCarsData() {
