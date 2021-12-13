@@ -235,6 +235,9 @@ header nav > ul li:hover {
   font-size: 1rem;
   color: #333;
 }
+#menu ul form {
+  margin-top: 4%;
+}
 
 .menu-overlay {
   position: absolute;
