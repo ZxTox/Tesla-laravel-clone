@@ -34,6 +34,11 @@
                 @if (Auth::user() -> role == "admin")
                 <li><a href="{{ route('admin') }}">Admin dashboard</a></li>
                 @endif
+
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <input class="btn btn-secondary" type="submit" value="Log out">
+                </form>
             @endauth
             
         </ul>
