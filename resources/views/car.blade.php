@@ -140,9 +140,9 @@
 <script>
     const locations = [
             {
-                "description": "{{ Auth::user() -> name }}",
-                "coordinates": JSON.parse("{{ Auth::user() -> location }}"),
-                "location": "Test"
+                "description": "{{ $car -> name }}",
+                "coordinates": JSON.parse("{{ $car-> location }}"),
+                "location": "Location"
             }
         ]
 
