@@ -1,7 +1,8 @@
-document.addEventListener("DOMContentLoaded", init);
-let currentIndex = 0;
+const IMG_SELECTOR = "#car-media img";
 
+let currentIndex = 0;
 let imagesArray;
+document.addEventListener("DOMContentLoaded", init);
 
 function init() {
     loadImages();
@@ -33,7 +34,7 @@ function init() {
     }
 
     function loadImages() {
-        const { images } = document.querySelector("img").dataset;
+        const { images } = document.querySelector(IMG_SELECTOR).dataset;
 
         imagesArray = images.split(" ");
     }
@@ -64,7 +65,7 @@ function init() {
                 currentIndex = imagesArray.length;
             }
         }
-        const $img = document.querySelector("img");
+        const $img = document.querySelector(IMG_SELECTOR);
 
         $img.style.opacity = 0;
         $img.src = imagesArray[currentIndex % imagesArray.length];

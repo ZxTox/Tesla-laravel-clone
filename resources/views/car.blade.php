@@ -2,10 +2,31 @@
 
 @section('head')
     <title>Tesell | {{ $car -> year}} {{ $car -> modelName }}</title>
+
+    <meta name="description" content="Tesell - {{ $car -> year }} {{ $car -> modelName }} on sale">
+
+
     @include("layouts.mapboxCDN")
 @endsection
 
 @section("content")
+
+
+<div class="overlay">
+<section id="contact-seller">
+    <h3>Seller details</h3>
+        <figure>
+            <a href="#">
+                <img src="{{ $car -> photoUrl }}" alt="{{ $car -> name }}'s' profile picture">
+            </a>
+            <figcaption>
+              {{ $car -> name }}
+            </figcaption>
+        </figure>
+    
+</section>
+</div>
+
 
 <div id="car">
 
