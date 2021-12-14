@@ -17,7 +17,7 @@ class CarController extends Controller
 
     function getAllCars(Request $request) {
         $modelName = $request->query('model');
-        $offers = Offer::join('users', 'offers.seller', '=', 'users.id')->select('offers.*', 'users.email', 'users.name', 'users.photoUrl');
+        $offers = Offer::join('users', 'offers.seller', '=', 'users.id')->select('offers.*', 'users.email', 'users.name', 'users.photoUrl', 'users.created_at');
 
         if(isset($modelName)) {
             $offers->where("modelName", $modelName);

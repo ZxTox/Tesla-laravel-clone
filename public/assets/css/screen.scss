@@ -836,11 +836,17 @@ form {
 
 .overlay {
 	@include popup-background(false);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
 	& > section {
+		padding: 2rem;
 		background-color: $white;
-		width: 40%;
-		height: 60%;
+		width: 60%;
+		height: 40%;
+		border-radius: 10px;
+		box-shadow: $box-shadow;
 	}
 }
 

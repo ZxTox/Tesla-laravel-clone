@@ -15,6 +15,7 @@
 <div class="overlay">
 <section id="contact-seller">
     <h3>Seller details</h3>
+    <p>{{ $car -> created_at }}</p>
         <figure>
             <a href="#">
                 <img src="{{ $car -> photoUrl }}" alt="{{ $car -> name }}'s' profile picture">
