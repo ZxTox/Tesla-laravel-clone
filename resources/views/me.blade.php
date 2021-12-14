@@ -90,6 +90,8 @@
 <script src="{{ asset("assets/js/alert.js") }}"></script>
 <script src="{{ asset("/assets/js/me.js") }}"></script>
 
+
+@if(!is_null(Auth::user() -> location))
 <script>
     const locations = [
             {
@@ -101,8 +103,8 @@
 
     loadMapWithAddress(locations, "#me-location > p");
 </script>
+@endif
 
-</script>
 
 
 

@@ -55,8 +55,6 @@ function init() {
 
         const typeNumber = parseInt(typeKey === "" ? e.target.dataset.type : typeKey);
 
-        console.log(typeNumber);
-
         if (typeNumber === 0) {
             currentIndex++;
         } else {

@@ -137,6 +137,7 @@
 <script src="{{ asset("assets/js/mapbox.js") }}"></script>
 <script src="{{ asset("assets/js/car.js") }}"></script>
 
+@if(!is_null($car -> location))
 <script>
     const locations = [
             {
@@ -148,4 +149,7 @@
 
     loadMapWithAddress(locations, "#place-name");
 </script>
+@endif
+
+
 @endsection
