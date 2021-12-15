@@ -672,9 +672,16 @@ form input:not(input[type=submit]):hover, form select:not(input[type=submit]):ho
   justify-content: center;
   text-align: center;
   gap: 2rem;
+  overflow: hidden;
+}
+.files .file {
+  text-overflow: hidden;
 }
 .files .file img {
-  max-width: 100%;
+  max-width: 40%;
+}
+.files .file p {
+  text-overflow: ellipsis;
 }
 
 #my-offers {

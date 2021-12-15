@@ -720,10 +720,16 @@ form {
 	justify-content: center;
 	text-align: center;
 	gap: 2rem;
+	overflow: hidden;
 
 	.file {
+		text-overflow: hidden;
 		img {
-			max-width: 100%;
+			max-width: 40%;
+		}
+
+		p {
+			text-overflow: ellipsis;
 		}
 	}
 }
