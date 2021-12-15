@@ -98,7 +98,7 @@ button, a.btn-secondary, a.btn-primary{
 }
 
 .hidden {
-	display: none;
+	display: none !important;
 }
 
 #container {
@@ -836,6 +836,8 @@ form {
 
 .overlay {
 	@include popup-background(false);
+
+
 	display: flex;
 	justify-content: center;
 	align-items: center;

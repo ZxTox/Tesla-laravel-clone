@@ -6,6 +6,10 @@ document.addEventListener("DOMContentLoaded", init);
 
 function init() {
     loadImages();
+
+    document.querySelector("#btn-seller").addEventListener("click", toggleMenu);
+    document.querySelector("#contact-seller > svg").addEventListener("click", toggleMenu);
+
     document.querySelectorAll(".img-arrows").forEach(arrow => arrow.addEventListener("click", changeImg));
     document.querySelector("#car-information").addEventListener("scroll", removeScrollArrow);
     document.addEventListener("keydown", (e) => {
@@ -37,6 +41,12 @@ function init() {
         const { images } = document.querySelector(IMG_SELECTOR).dataset;
 
         imagesArray = images.split(" ");
+    }
+
+    function toggleMenu(e) {
+        e.preventDefault();
+
+        document.querySelector(".overlay").classList.toggle("hidden");
     }
 
     function toggleFullScreen() {

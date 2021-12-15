@@ -12,7 +12,7 @@
 @section("content")
 
 
-<div class="overlay">
+<div class="overlay hidden">
 <section id="contact-seller">
 
     <svg class="close-icon" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
@@ -151,7 +151,7 @@
         </figure>
 
 
-          <button class="btn btn-primary">Contact Seller</button>
+          <button id="btn-seller" class="btn btn-primary">Contact Seller</button>
 
 
 
