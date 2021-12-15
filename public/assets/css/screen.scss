@@ -841,16 +841,58 @@ form {
 	align-items: center;
 
 	& > section {
+		text-align: center;
+		position: relative;
+
+		svg {
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			top: 4%;
+			right: 2%;
+			border-radius: 50%;
+
+			&:hover {
+				background-color: $light-grey;
+				cursor: pointer;
+			}
+		}
+
+		h3, p, figure, a {
+			margin-bottom: 2%;
+		}
+
+		figcaption {
+			margin-top: 2%;
+			font-size: 1.2rem;
+		}
+
+
 		padding: 2rem;
 		background-color: $white;
 		width: 60%;
 		height: 40%;
 		border-radius: 10px;
 		box-shadow: $box-shadow;
+
+
+		& > figure {
+			& > img {
+				@include profile-picture(20%);
+			}
+		}
 	}
 }
 
 @media screen and (max-width: 50em) {
+
+	.overlay {
+		& section {
+			width: 100vw;
+		}
+	}
+
+
 	#cars {
 		padding: unset;
 		.car-inventory {

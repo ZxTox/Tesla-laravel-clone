@@ -14,17 +14,22 @@
 
 <div class="overlay">
 <section id="contact-seller">
+
+    <svg class="close-icon" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="#171a20" stroke-width="1.5" stroke-linecap="round"><line x1="10" y1="10" x2="20" y2="20"></line><line x1="20" y1="10" x2="10" y2="20"></line></g>
+    </svg>
+
+
     <h3>Seller details</h3>
-    <p>{{ $car -> created_at }}</p>
+    <p>Date of creation: {{ $car -> created_at->isoformat("DD-MM-YYYY") }}</p>
         <figure>
-            <a href="#">
-                <img src="{{ $car -> photoUrl }}" alt="{{ $car -> name }}'s' profile picture">
-            </a>
-            <figcaption>
+            <img src="{{ $car -> photoUrl }}" alt="{{ $car -> name }}'s' profile picture">
+        <figcaption>
               {{ $car -> name }}
             </figcaption>
         </figure>
     
+    <a class="btn btn-primary" href="mailto: {{ $car -> email }}">{{ $car -> email }}</a>
 </section>
 </div>
 
