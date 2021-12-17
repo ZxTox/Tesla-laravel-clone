@@ -46,7 +46,12 @@
 
         <div class="offers">
             @foreach ($offers as $offer)
+
+            @if(strtotime($offer -> created_at) > strtotime('-10 days')) 
+            <div class="offer new">
+            @else
             <div class="offer">
+            @endif
 
                 <h3>{{ $offer -> modelName }}</h3>
                 <h4>{{ $offer -> typeModel }}</h4>

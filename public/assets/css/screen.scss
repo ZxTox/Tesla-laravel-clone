@@ -753,6 +753,7 @@ form {
 			grid-template-columns: repeat(4, 1fr);
 			align-items: center;
 			column-gap: .4rem;
+			position: relative;
 
 			& > h4 {
 				font-size: 1.2rem;
@@ -878,8 +879,8 @@ form {
 
 		padding: 2rem;
 		background-color: $white;
-		width: 60%;
-		height: 40%;
+		// width: 60%;
+		// height: 40%;
 		border-radius: 10px;
 		box-shadow: $box-shadow;
 
@@ -890,6 +891,22 @@ form {
 			}
 		}
 	}
+}
+
+.new::after {
+	content: 'NEW';
+	position: absolute;
+	left: 4%;
+	top: -8%;
+	width: 100px;
+	height: 29px;
+	background-color: red;
+	color: white;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem 4rem;
 }
 
 @media screen and (max-width: 50em) {
