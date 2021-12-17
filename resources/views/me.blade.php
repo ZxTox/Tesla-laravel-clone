@@ -60,12 +60,16 @@
         <input class="btn-primary" type="submit" value="Save Changes">
     </form>
 
+    @if(is_null(Auth::user() -> location))
     <form id="me-location" class="hidden" method="POST" action="{{ route("saveLocation") }}">
+    @else
+    <form id="me-location" class="hidden" method="GET" action="{{ route("removeLocation") }}">
+    @endif    
         @csrf
 
         @if(!is_null(Auth::user() -> location))
             <p>{{ Auth::user() -> location }}</p>
-            
+            <input class="btn-primary" type="submit" value="Remove my location">
         @else
             <button type="button" class="btn btn-secondary">Get My Location</button>
         @endif

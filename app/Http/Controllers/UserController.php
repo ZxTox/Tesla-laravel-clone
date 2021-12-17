@@ -31,6 +31,15 @@ class UserController extends Controller
         return redirect()->back()->with("message", "Location successfully updated!");
     }
 
+    function removeLocation(Request $request) {
+        $user = User::find(Auth::user() -> id);
+
+        $user -> location = NULL;
+        $user -> save();
+
+        return redirect()->back()->with("message", "Location was successfully removed!");
+    }
+
     function getAllUsers(Request $request) {
         $users = User::all();
 

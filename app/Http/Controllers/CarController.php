@@ -46,7 +46,7 @@ class CarController extends Controller
     }
 
     function showMyOffers() {
-        $offers = Offer::where('seller', Auth::user() -> id)->get();
+        $offers = Offer::where('seller', Auth::user() -> id)->orderBy('created_at','desc')->get();
         return view("my-offers", ["offers" => $offers]);
     }
 
