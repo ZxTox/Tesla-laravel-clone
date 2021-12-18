@@ -876,6 +876,7 @@ form input:not(input[type=submit]):hover, form select:not(input[type=submit]):ho
   #my-offers .offers {
     grid-template-columns: repeat(1, 1fr);
   }
+
   #car {
     grid-template-areas: "car car car car car car" "car car car car car car" "info info info info info info" "info info info info info info";
   }
