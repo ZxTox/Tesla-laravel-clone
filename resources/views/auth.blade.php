@@ -46,7 +46,7 @@
                     <input class="btn btn-primary" type="submit" value="Register">
                 </form>
 
-            <a href="#">Forgot password?</a>
+            <a href="{{ route("password.request") }}">Forgot password?</a>
 
             <span>OR</span>
 
