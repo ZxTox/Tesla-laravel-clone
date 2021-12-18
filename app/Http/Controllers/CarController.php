@@ -50,6 +50,14 @@ class CarController extends Controller
         return view("my-offers", ["offers" => $offers]);
     }
 
+    function markAsSold($offerid) {
+        Offer::where('offerid', $offerid)
+        ->where('seller', Auth::user() -> id)
+        ->update(['sold' => 1]);
+
+        return redirect()->back()->with("message", "Offer with id: " . $offerid . " has been marked as sold");
+    }
+
     function addCar(Request $request) {
         $results = $this -> validateOffer($request);
 

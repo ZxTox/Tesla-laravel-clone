@@ -64,9 +64,9 @@
                         </a>
 
                     <a href="{{ route("car", $offer -> offerid) }}">
-                    <button class="btn-primary">
-                        Edit Offer
-                    </button>  
+                    <a href="{{ route("markAsSold", $offer -> offerid) }}" class="btn-primary">
+                        Mark as Sold
+                    </a>  
                     </a>
                 </div>
                 
@@ -85,6 +85,12 @@
     <canvas></canvas>
 </div>
 
+<script src="{{ asset("assets/js/alert.js") }}"></script>
 <script src="{{ asset('assets/js/chart.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+@if(session()->has('message'))
+    <script type="text/javascript">
+        animateAlert("{{session()->get('message')}}");
+    </script>
+@endif
 @endsection

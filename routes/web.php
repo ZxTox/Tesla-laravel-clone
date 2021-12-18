@@ -38,6 +38,8 @@ Route::group(["prefix" => "addoffer"], function() {
     Route::post('/', [CarController::class, "addCar"])->middleware("auth")->name("addCar");
 });
 
+Route::get('/offers/sold/{id}', [CarController::class, "markAsSold"])->middleware("auth")->name("markAsSold");
+
 Route::get('/admin', [ViewController::class, "showAdmin"])->middleware("isAdmin")->name("admin");
 
 
