@@ -4,6 +4,9 @@ const USERS_CHART_SELECTOR = '#users-chart'
 const API_AMOUNT_OF_CARS_PER_USER = '/api/mostoffers';
 const USERS_MOST_CARS_SELECTOR = '#amount-of-cars-chart';
 
+const API_CARS_SOLD_BY_DAY = '/api/sold';
+const MOST_CARS_SOLD_SELECTOR = '#cars-sold-by-day';
+
 const generateRandomColors = (length) => [...Array(length)].map(() => `#${Math.floor(Math.random() * 16777215).toString(16)}`);
 
 document.addEventListener('DOMContentLoaded', init);
@@ -15,6 +18,9 @@ async function init() {
 
     // Amount of cars sold
     amountOfCars();
+
+    // Most cars sold
+    mostCarSold();
 }
 
 
@@ -126,5 +132,62 @@ async function amountOfCars() {
 }
 
 
+async function mostCarSold() {
+    const ctx = document.querySelector(MOST_CARS_SOLD_SELECTOR).getContext('2d');
+    const data = await fetchData(API_CARS_SOLD_BY_DAY);
+
+
+    const dataFreq = Object.assign({}, ...(data.map(car => ({ [car.date]: `${car.amountOfCars}` }))));
+
+    console.log(dataFreq);
+
+
+    const configuration = {
+        type: 'bar',
+        data: {
+            datasets: [
+                {
+                    data: dataFreq,
+                },
+            ],
+        },
+        options: {
+            backgroundColor: generateRandomColors(Object.keys(dataFreq).length),
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Cars sold by date',
+                },
+                legend: {
+                    display: false,
+                },
+            },
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Dates',
+                        font: {
+                            weight: 'bold',
+                        },
+                    },
+                },
+                y: {
+                    ticks: {
+                        precision: 0
+                    },
+                    title: {
+                        display: true,
+                        text: 'Amount of cars sold',
+                        font: {
+                            weight: 'bold',
+                        },
+                    },
+                },
+            },
+        },
+    };
+    new Chart(ctx, configuration);
+}
 
 

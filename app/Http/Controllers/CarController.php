@@ -45,6 +45,13 @@ class CarController extends Controller
         return view('add-offer', ["features" => $features]);
     }
 
+    function soldStats() {
+        $soldCarsStats = Offer::select(Offer::raw('DATE(updated_at) as date') ,Offer::raw('count(*) as amountOfCars'))->groupBy(Offer::raw('DATE(updated_at)'))->havingRaw('date is not null')->get();
+        // $soldCarsStats = Offer::where('sold', '=', 1)->get();
+
+        return response()->json($soldCarsStats);
+    }
+
     function showMyOffers() {
         $offers = Offer::where('seller', Auth::user() -> id)->orderBy('created_at','desc')->get();
         return view("my-offers", ["offers" => $offers]);

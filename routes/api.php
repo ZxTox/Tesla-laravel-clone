@@ -27,3 +27,4 @@ Route::group(["prefix" => "cars"], function() {
 
 Route::get('/users', [UserController::class, "getAllUsers"]);
 Route::get('/mostoffers', [UserController::class, "usersWithMostCars"]);
+Route::get('/sold', [CarController::class, "soldStats"]);

@@ -19,6 +19,10 @@
     <div>
         <canvas id="amount-of-cars-chart"></canvas>
     </div>
+
+    <div>
+        <canvas id="cars-sold-by-day"></canvas>
+    </div>
 </section>
 
 
