@@ -893,20 +893,28 @@ form {
 	}
 }
 
-.new::after {
-	content: 'NEW';
+@mixin badge-tags($text, $color) {
+	content: $text;
 	position: absolute;
 	left: 4%;
 	top: -8%;
 	width: 100px;
 	height: 29px;
-	background-color: red;
+	background-color: $color;
 	color: white;
 	border-radius: 10px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	padding: 1rem 4rem;
+}
+
+.new::after {
+	@include badge-tags('NEW', $tesla-red);
+}
+
+.sold::after {
+	@include badge-tags('SOLD', $tesla-blue);
 }
 
 @media screen and (max-width: 50em) {

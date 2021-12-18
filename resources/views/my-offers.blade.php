@@ -48,9 +48,9 @@
             @foreach ($offers as $offer)
 
             @if(strtotime($offer -> created_at) > strtotime('-10 days')) 
-            <div class="offer new">
+            <div class="offer new {{ $offer -> sold == 1 ? 'sold': '' }}">
             @else
-            <div class="offer">
+            <div class="offer {{ $offer -> sold == 1 ? 'sold': '' }}">
             @endif
 
                 <h3>{{ $offer -> modelName }}</h3>

@@ -836,7 +836,23 @@ form input:not(input[type=submit]):hover, form select:not(input[type=submit]):ho
   top: -8%;
   width: 100px;
   height: 29px;
-  background-color: red;
+  background-color: #e82127;
+  color: white;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 4rem;
+}
+
+.sold::after {
+  content: "SOLD";
+  position: absolute;
+  left: 4%;
+  top: -8%;
+  width: 100px;
+  height: 29px;
+  background-color: #466cd9;
   color: white;
   border-radius: 10px;
   display: flex;
