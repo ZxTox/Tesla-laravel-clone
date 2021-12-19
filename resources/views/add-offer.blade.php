@@ -79,6 +79,13 @@
 <script src="{{ asset("assets/js/add-car.js") }}"></script>
 <script src="{{ asset('assets/js/mapbox.js') }}"></script>
 
+<script src="{{ asset("assets/js/alert.js") }}"></script>
+@if(session()->has('message'))
+    <script type="text/javascript">
+        animateAlert("{{session()->get('message')}}");
+    </script>
+@endif
+
 @endsection
 
 

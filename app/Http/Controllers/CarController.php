@@ -92,7 +92,7 @@ class CarController extends Controller
 
         $offer -> save();
 
-        return redirect()->back()->with("message", "Car successfully updated!");
+        return redirect()->back()->with("message", "Car successfully added!");
     }
 
     function validateOffer(Request $request) {
