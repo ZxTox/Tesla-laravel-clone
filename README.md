@@ -38,7 +38,7 @@ Please include this at the end of your dotenv file if you want to upload content
 
 (Last 2 are empty)
 ```
-CLOUDINARY_URL=cloudinary://678754674889451:RGFLBDfrzOwud0Tzf8bVknrdIas@tesell
+CLOUDINARY_URL=
 CLOUDINARY_UPLOAD_PRESET=
 CLOUDINARY_NOTIFICATION_URL=
 ```
